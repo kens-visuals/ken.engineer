@@ -1,37 +1,20 @@
-import { useEffect, useState } from 'react';
-
-import { useTheme } from 'next-themes';
+import { useContext } from 'react';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 export default function ThemeToggler() {
-  const [mounted, setMounted] = useState<boolean>(false);
-  const [isChecked, setChecked] = useState<boolean>(false);
-  const { systemTheme, theme, setTheme } = useTheme();
-
-  console.log(theme);
-
-  useEffect(() => {
-    setMounted(true);
-
-    if (systemTheme === 'dark') {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
-  }, [systemTheme]);
-
-  if (!mounted) {
-    return null;
-  }
+  const { theme, setTheme, isChecked, setIsChecked } = useContext(ThemeContext);
 
   const handleCheckedChange = () => {
     if (theme === 'dark') {
       setTheme('light');
-      setChecked(true);
+      setIsChecked(true);
     } else {
       setTheme('dark');
-      setChecked(false);
+      setIsChecked(false);
     }
   };
+
+  console.log(theme);
 
   return (
     <label
