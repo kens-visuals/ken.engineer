@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 // Components
-import ThemeToggler from '../components/ThemeToggler';
+import ThemeToggler from './ThemeToggler';
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -18,8 +18,8 @@ export default function Nav() {
   ));
 
   return (
-    <nav className="fixed top-0 left-1/2 z-10 block w-[88%] max-w-5xl -translate-x-1/2">
-      <div className="relative flex gap-4 pt-4 font-inter md:static md:items-center ">
+    <nav className="fixed top-0 left-1/2 z-10 block w-[88%] max-w-5xl -translate-x-1/2 border-b border-primary-dark bg-nav-pattern  pb-4 pt-6 backdrop-blur-lg dark:border-primary-light">
+      <div className="relative flex gap-4 font-inter md:static md:items-center ">
         <Link className="mr-auto text-body uppercase" href="/">
           Ken.Engineer
         </Link>
