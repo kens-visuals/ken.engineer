@@ -1,11 +1,4 @@
-import {
-  useState,
-  useEffect,
-  createContext,
-  useMemo,
-  SetStateAction,
-  Dispatch,
-} from 'react';
+import { useState, useEffect, createContext, useMemo } from 'react';
 import { useTheme } from 'next-themes';
 
 // Interfaces
@@ -13,7 +6,7 @@ interface ValuesTypes {
   theme: string | undefined;
   setTheme: (theme: string) => void;
   isChecked: boolean;
-  setIsChecked: Dispatch<SetStateAction<boolean>>;
+  setIsChecked: (isChecked: boolean) => void;
 }
 
 export const ThemeContext = createContext<ValuesTypes>({

@@ -1,4 +1,6 @@
 import { useContext } from 'react';
+
+// Contexts
 import { ThemeContext } from '../contexts/ThemeContext';
 
 export default function ThemeToggler() {
@@ -13,8 +15,6 @@ export default function ThemeToggler() {
       setIsChecked(false);
     }
   };
-
-  console.log(theme);
 
   return (
     <label
