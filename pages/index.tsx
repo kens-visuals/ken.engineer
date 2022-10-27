@@ -4,6 +4,7 @@ import About from '../components/About';
 // Components
 import Container from '../components/Container';
 import Footer from '../components/Footer';
+import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 
 export default function Home() {
@@ -23,10 +24,13 @@ export default function Home() {
             Dreams
           </h1>
         </header>
+
         <main className="mt-20 min-h-screen">
           <About />
 
           <Skills />
+
+          <Projects />
         </main>
 
         <Footer />
