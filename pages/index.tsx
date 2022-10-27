@@ -9,7 +9,7 @@ import Skills from '../components/Skills';
 
 export default function Home() {
   return (
-    <div className="bg-primary relative min-h-screen bg-primary-light font-jakarta dark:bg-primary-dark">
+    <div className="bg-primary relative min-h-screen bg-primary-light font-jakarta selection:bg-js-yellow selection:text-primary-light dark:bg-primary-dark">
       <Head>
         {/* Replace this with next-seo */}
         <title>Create Next App</title>

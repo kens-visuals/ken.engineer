@@ -18,7 +18,7 @@ export default function Nav() {
   ));
 
   return (
-    <nav className="fixed top-0 left-1/2 z-50 block w-[88%] max-w-5xl -translate-x-1/2 border-b border-primary-dark bg-nav-pattern pb-4 pt-6 backdrop-blur-lg dark:border-primary-light">
+    <nav className="fixed top-0 left-1/2 z-50 block w-[88%] max-w-5xl -translate-x-1/2 rounded-b-lg border-b border-primary-dark bg-nav-pattern pb-4 pt-6 backdrop-blur-lg dark:border-primary-light">
       <div className="relative flex gap-4 font-inter md:static md:items-center ">
         <Link className="mr-auto text-body uppercase" href="/">
           Ken.Engineer

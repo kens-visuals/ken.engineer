@@ -16,7 +16,7 @@ export default function ProjectCard({
   liveSite,
 }: ProjectsDataTypes) {
   return (
-    <div className="mt-4 flex flex-col gap-6 overflow-hidden rounded-2xl border border-accent-grey-light p-6 dark:border-accent-grey-dark lg:flex-row">
+    <div className="mt-4 flex flex-col gap-6 overflow-hidden rounded-2xl border border-accent-grey-light p-5 dark:border-accent-grey-dark lg:flex-row">
       <div className="h-full w-full lg:max-w-md lg:flex-grow-0">
         <Image
           src={screenshot}
@@ -28,7 +28,7 @@ export default function ProjectCard({
       </div>
 
       <div className="w-full lg:flex lg:flex-col lg:justify-between">
-        <h4 className="text-heading-md leading-none text-primary-dark dark:text-primary-light">
+        <h4 className="w-fit rounded-md bg-js-yellow p-2 text-heading-md leading-none text-primary-dark ">
           {title}
         </h4>
         <span className="mt-2 inline-block text-body text-primary-dark dark:text-primary-light">
@@ -38,12 +38,12 @@ export default function ProjectCard({
           {description}
         </p>
 
-        <div className="mt-6 flex w-full flex-col gap-4 md:flex-row">
+        <div className="mt-4 flex w-full flex-col gap-4 md:flex-row">
           <a
             target="_blank"
             rel="noopener noreferrer"
             href={code}
-            className="w-full rounded-full border border-js-yellow py-2 text-center text-body font-bold tracking-wider text-js-yellow"
+            className="w-full rounded-full border border-js-yellow py-2 text-center text-body font-bold tracking-wider text-primary-dark dark:text-js-yellow"
           >
             Code
           </a>
