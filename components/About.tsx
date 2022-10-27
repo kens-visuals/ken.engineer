@@ -41,7 +41,7 @@ export default function About() {
               href="mailto:karapet.nersisyan@yahoo.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="my-4 inline-block w-full rounded-full bg-js-yellow p-4 text-center text-2xl font-bold uppercase text-primary-dark"
+              className="my-4 inline-block w-full rounded-full bg-js-yellow p-4 text-center text-2xl font-bold uppercase tracking-widest text-primary-dark"
             >
               Hire Me!
             </a>

@@ -59,9 +59,9 @@ module.exports = {
           rgba(97, 196, 183, 0.1) 93.02%
         );`,
         'learning-tools-pattern': `linear-gradient(
-          107.29deg,
-          rgba(255, 255, 255, 0.4) 10.77%,
-          rgba(255, 255, 255, 0.1) 83.31%
+          106.91deg, 
+          rgba(117, 92, 222, 0.4) 11.91%, 
+          rgba(117, 92, 222, 0.1) 85.49%
         );`,
         'uiux-tools-pattern': `linear-gradient(
           153.09deg,
@@ -83,6 +83,11 @@ module.exports = {
           rgba(117, 92, 222, 0.4) -0.6%,
           rgba(117, 92, 222, 0.1) 85.46%
         );`,
+      },
+      gridTemplateRows: {
+        'mobile-row-layout': 'repeat(6, 8rem)',
+        'tablet-row-layout': 'repeat(3, 8rem)',
+        'desk-row-layout': 'repeat(2, 8rem)',
       },
     },
   },

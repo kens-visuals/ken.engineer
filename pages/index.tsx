@@ -24,6 +24,28 @@ export default function Home() {
             </h1>
 
             <About />
+
+            <section className="my-60">
+              <h2 className="text-6xl text-heading-lg leading-tight text-primary-dark dark:text-primary-light">
+                Ever imporving{' '}
+                <span className="text-js-yellow underline">skills.</span>
+              </h2>
+
+              <div className="my-10 grid grid-cols-2 grid-rows-mobile-row-layout gap-4 md:grid-cols-4 md:grid-rows-tablet-row-layout lg:grid-flow-row-dense lg:grid-cols-6 lg:grid-rows-desk-row-layout">
+                <div className="col-span-2 bg-main-tools-pattern p-6">
+                  Main Tools
+                </div>
+                <div className="col-span-2 bg-learning-tools-pattern p-6 md:row-start-3 md:row-end-4 lg:row-start-2 lg:row-end-3">
+                  Currently Learning
+                </div>
+                <div className="bg-uiux-tools-pattern p-6">UI/UX</div>
+                <div className="bg-apps-pattern p-6">Apps</div>
+                <div className="col-span-2 bg-resume-pattern p-6">Resume</div>
+                <div className="col-span-2 row-span-2 bg-other-tools-pattern p-6 lg:col-start-5 lg:col-end-7 lg:row-start-1 lg:row-end-3">
+                  Other Tools
+                </div>
+              </div>
+            </section>
           </header>
         </main>
 
