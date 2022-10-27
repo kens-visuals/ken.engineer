@@ -49,6 +49,10 @@ module.exports = {
         ],
       },
       backgroundImage: {
+        'nav-pattern': `linear-gradient(
+          180deg, rgba(28, 28, 28, 0.4) 0%, 
+          rgba(28, 28, 28, 0.1) 100%
+        );`,
         'main-tools-pattern': `linear-gradient(
           107.51deg,
           rgba(97, 196, 183, 0.4) 5.37%,

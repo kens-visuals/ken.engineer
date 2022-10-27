@@ -1,8 +1,13 @@
 import Head from 'next/head';
+import About from '../components/About';
+
+// Components
+import Container from '../components/Container';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-primary relative min-h-screen bg-primary-light font-jakarta dark:bg-primary-dark">
       <Head>
         {/* Replace this with next-seo */}
         <title>Create Next App</title>
@@ -10,20 +15,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      </main>
+      <Container>
+        <main className="mt-20 min-h-screen">
+          <header className="my-40">
+            <h1 className="text-6xl text-heading-lg leading-tight text-primary-dark dark:text-primary-light">
+              <span className="text-js-yellow">Front-End Engineer</span> of Your
+              Dreams
+            </h1>
 
-      <footer>
-        <span>Designed and Coded by </span>
-        <a
-          href="https://github.com/kens-visuals"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Ken Nersisyan
-        </a>
-      </footer>
+            <About />
+          </header>
+        </main>
+
+        <Footer />
+      </Container>
     </div>
   );
 }
