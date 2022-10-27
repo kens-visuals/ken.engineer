@@ -1,0 +1,33 @@
+<svg width="128" height="160" viewBox="0 0 128 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 2">
+<rect id="Rectangle Copy 8" width="64" height="128" fill="#552049"/>
+<circle id="Oval" cx="32" cy="32" r="14" stroke="#FFF7F0" stroke-width="4"/>
+<g id="Group 16">
+<rect id="Rectangle" x="64" width="64" height="32" rx="16" fill="#F6A560"/>
+<path id="Path" fill-rule="evenodd" clip-rule="evenodd" d="M32 128L64 160V128H32Z" fill="#61C4B7"/>
+<path id="Path Copy 3" fill-rule="evenodd" clip-rule="evenodd" d="M64 96L96 128V96H64Z" fill="#61C4B7"/>
+<circle id="Oval_2" cx="112" cy="16" r="14" stroke="#FFF7F0" stroke-width="4"/>
+<circle id="Oval_3" cx="112" cy="16" r="14" stroke="#FFF7F0" stroke-width="4"/>
+</g>
+<circle id="Oval_4" cx="80" cy="48" r="14" stroke="#1C1C1C" stroke-width="4"/>
+<rect id="Rectangle_2" x="96" y="32" width="32" height="32" fill="#EB7565"/>
+<path id="Path_2" fill-rule="evenodd" clip-rule="evenodd" d="M32 64L128 160V64H32Z" fill="#FFF7F0"/>
+<g id="Group 7">
+<g id="Group 3">
+<rect id="Rectangle Copy 5" y="128" width="4" height="4" fill="#1C1C1C"/>
+<rect id="Rectangle Copy 6" x="14" y="128" width="4" height="4" fill="#1C1C1C"/>
+<rect id="Rectangle Copy 7" x="28" y="128" width="4" height="4" fill="#1C1C1C"/>
+</g>
+<g id="Group 3 Copy">
+<rect id="Rectangle Copy 5_2" y="142" width="4" height="4" fill="#1C1C1C"/>
+<rect id="Rectangle Copy 6_2" x="14" y="142" width="4" height="4" fill="#1C1C1C"/>
+<rect id="Rectangle Copy 7_2" x="28" y="142" width="4" height="4" fill="#1C1C1C"/>
+</g>
+<g id="Group 3 Copy 2">
+<rect id="Rectangle Copy 5_3" y="156" width="4" height="4" fill="#1C1C1C"/>
+<rect id="Rectangle Copy 6_3" x="14" y="156" width="4" height="4" fill="#1C1C1C"/>
+<rect id="Rectangle Copy 7_3" x="28" y="156" width="4" height="4" fill="#1C1C1C"/>
+</g>
+</g>
+</g>
+</svg>

@@ -63,9 +63,8 @@ module.exports = {
           rgba(117, 92, 222, 0.4) 11.91%, 
           rgba(117, 92, 222, 0.1) 85.49%
         );`,
-        'uiux-tools-pattern': `linear-gradient(
-          153.09deg,
-          rgba(246, 165, 96, 0.4) 4.6%,
+        'uiux-tools-pattern': `linear-gradient(153.09deg, 
+          rgba(246, 165, 96, 0.4) 4.6%, 
           rgba(246, 165, 96, 0.1) 91.98%
         );`,
         'apps-pattern': `linear-gradient(
@@ -73,9 +72,8 @@ module.exports = {
           rgba(243, 158, 158, 0.4) 6.48%,
           rgba(243, 158, 158, 0.1) 92.62%
         );`,
-        'resume-pattern': `linear-gradient(
-          104.87deg,
-          rgba(235, 117, 101, 0.4) 11.03%,
+        'resume-pattern': `linear-gradient(104.87deg, 
+          rgba(235, 117, 101, 0.4) 11.03%, 
           rgba(235, 117, 101, 0.1) 91.28%
         );`,
         'other-tools-pattern': `linear-gradient(
@@ -85,9 +83,9 @@ module.exports = {
         );`,
       },
       gridTemplateRows: {
-        'mobile-row-layout': 'repeat(6, 8rem)',
-        'tablet-row-layout': 'repeat(3, 8rem)',
-        'desk-row-layout': 'repeat(2, 8rem)',
+        'mobile-row-layout': 'repeat(6, 10rem)',
+        'tablet-row-layout': 'repeat(3, 10rem)',
+        'desk-row-layout': 'repeat(2, 10rem)',
       },
     },
   },

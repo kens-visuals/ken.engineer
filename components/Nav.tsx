@@ -18,7 +18,7 @@ export default function Nav() {
   ));
 
   return (
-    <nav className="fixed top-0 left-1/2 z-10 block w-[88%] max-w-5xl -translate-x-1/2 border-b border-primary-dark bg-nav-pattern  pb-4 pt-6 backdrop-blur-lg dark:border-primary-light">
+    <nav className="fixed top-0 left-1/2 z-50 block w-[88%] max-w-5xl -translate-x-1/2 border-b border-primary-dark bg-nav-pattern pb-4 pt-6 backdrop-blur-lg dark:border-primary-light">
       <div className="relative flex gap-4 font-inter md:static md:items-center ">
         <Link className="mr-auto text-body uppercase" href="/">
           Ken.Engineer
@@ -69,7 +69,7 @@ export default function Nav() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <ul className="absolute top-14 right-0 z-10 flex w-full max-w-sm flex-col gap-4 rounded-md bg-primary-dark p-4 text-primary-light dark:bg-primary-light dark:text-primary-dark md:hidden">
+          <ul className="absolute top-14 right-0 z-10 flex w-full max-w-sm flex-col gap-4 rounded-md bg-nav-pattern p-4 text-primary-dark backdrop-blur-lg dark:bg-nav-pattern  dark:text-primary-light md:hidden">
             {menuItemsDisplay}
             <li className="flex items-center">
               <ThemeToggler />
