@@ -13,7 +13,7 @@ export default function About() {
         Hi, I’m <span className="text-js-yellow underline">Ken</span>
       </h2>
 
-      <div className="mt-4 flex flex-col items-center justify-center">
+      <div className="mt-4 grid md:grid-cols-2">
         <Image
           alt="Ken Nersisyan"
           src={imgPreview}
@@ -22,7 +22,7 @@ export default function About() {
           className="my-10"
         />
 
-        <div className="">
+        <div className="md:col-start-2 md:col-end-3 ">
           <h3 className="text-heading-md">
             ...and I’d love to work on your next project
           </h3>
@@ -33,19 +33,21 @@ export default function About() {
             interactive web development. I will help you and your team to achive
             the best possible results for your project.{' '}
           </p>
+        </div>
 
-          <div>
+        <div className="md:col-span-2 md:row-start-2 md:flex md:w-full md:items-center md:justify-between md:gap-4">
+          <div className="md:basis-2/5">
             <Socials />
-
-            <a
-              href="mailto:karapet.nersisyan@yahoo.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="my-4 inline-block w-full rounded-full bg-js-yellow p-4 text-center text-2xl font-bold uppercase tracking-widest text-primary-dark"
-            >
-              Hire Me!
-            </a>
           </div>
+
+          <a
+            href="mailto:karapet.nersisyan@yahoo.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="my-4 inline-block w-full rounded-full bg-js-yellow p-4 text-center text-2xl font-bold uppercase tracking-widest text-primary-dark md:basis-1/2"
+          >
+            Hire Me!
+          </a>
         </div>
       </div>
     </section>
