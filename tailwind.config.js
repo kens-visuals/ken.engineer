@@ -50,8 +50,9 @@ module.exports = {
       },
       backgroundImage: {
         'nav-pattern': `linear-gradient(
-          180deg, rgba(28, 28, 28, 0.4) 0%, 
-          rgba(28, 28, 28, 0.1) 100%
+          180deg, 
+          rgba(28, 28, 28, .1) 5%, 
+          rgba(28, 28, 28, .9) 65%
         );`,
         'main-tools-pattern': `linear-gradient(
           107.51deg,
