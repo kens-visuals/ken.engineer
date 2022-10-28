@@ -4,11 +4,11 @@ export default function Articles() {
   return (
     <section className="my-60">
       <h2 className="text-heading-lg text-primary-dark dark:text-primary-light">
-        Tech <span className=" text-js-yellow underline">articles</span> for
+        Tech <span className="text-js-yellow underline">articles</span> for
         everyone
       </h2>
 
-      <div className="mt-6 items-stretch md:mt-8 lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:gap-4">
+      <div className="mt-10 items-stretch md:mt-8 lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:gap-4">
         <div className="relative rounded-xl lg:col-span-2">
           <Image
             src="https://images.unsplash.com/27/type-set.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2684&q=80"
@@ -99,11 +99,11 @@ export default function Articles() {
           New
         </span>
 
-        <ul className="mt-6 grid-cols-3 space-y-10 divide-y divide-js-yellow md:mt-0 lg:grid lg:gap-6 lg:space-y-0 lg:divide-y-0 lg:divide-x">
+        <ul className="mt-6 grid-cols-3  space-y-10 divide-y divide-js-yellow lg:grid lg:gap-6 lg:space-y-0 lg:divide-y-0 lg:divide-x">
           <li className="w-full lg:px-8">
             <a
               href="#"
-              className="my-4 block text-xl font-bold transition-all duration-300 hover:text-js-yellow"
+              className="my-4 block text-xl font-bold transition-all duration-300 hover:text-js-yellow lg:mt-0"
             >
               Hydrogen VS Electric Cars
             </a>
@@ -114,7 +114,7 @@ export default function Articles() {
           <li className="w-full lg:px-8">
             <a
               href="#"
-              className="my-4 block text-xl font-bold transition-all duration-300 hover:text-js-yellow"
+              className="my-4 block text-xl font-bold transition-all duration-300 hover:text-js-yellow lg:mt-0"
             >
               The Downsides of AI Artistry
             </a>
@@ -126,7 +126,7 @@ export default function Articles() {
           <li className="w-full lg:px-8">
             <a
               href="#"
-              className="my-4 block text-xl font-bold transition-all duration-300 hover:text-js-yellow"
+              className="my-4 block text-xl font-bold transition-all duration-300 hover:text-js-yellow lg:mt-0"
             >
               Is VC Funding Drying Up?
             </a>
@@ -146,7 +146,7 @@ export default function Articles() {
             target="block _blank"
             rel="noopener noreferrer"
             href="https://medium.com/subscribe/@kens_visuals"
-            className="animate-pulse border-b-2 border-b-teal-700 bg-teal-900 bg-clip-text font-bold text-transparent hover:text-primary-light dark:bg-main-tools-pattern--text "
+            className="animate-pulse border-b-2 border-b-teal-700 bg-teal-900 bg-clip-text font-bold text-transparent hover:text-primary-dark dark:bg-main-tools-pattern--text hover:dark:text-primary-light"
           >
             subscription button
           </a>{' '}

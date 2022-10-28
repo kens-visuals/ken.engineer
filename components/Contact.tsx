@@ -5,10 +5,16 @@ export default function Contact() {
         <span className="text-js-yellow underline">Contact</span> me.
       </h3>
 
-      <div className="mt-4 rounded-xl bg-primary-dark p-6 dark:bg-primary-light">
+      <div className="mt-6 rounded-xl bg-primary-dark p-6 dark:bg-primary-light">
         <span className="text-heading-md font-normal text-primary-light dark:text-primary-dark ">
-          Nothing personal, it’s just business
+          Nothing personal, it’s just business.
         </span>
+
+        <p className="mt-2 max-w-lg text-accent-grey-light dark:text-accent-grey-dark">
+          I’d love to have a chat to see how I can help you. The best first step
+          is for us to discuss your project. Then we can move forward from
+          there.
+        </p>
 
         <a
           href="mailto:karapet.nersisyan@yahoo.com"

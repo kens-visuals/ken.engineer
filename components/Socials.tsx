@@ -176,7 +176,7 @@ export default function Socials() {
   ));
 
   return (
-    <ul className="my-4 flex items-center justify-between">
+    <ul className="my-4 flex items-center justify-between md:basis-1/2 lg:gap-4">
       {socialIconsDisplay}
     </ul>
   );
