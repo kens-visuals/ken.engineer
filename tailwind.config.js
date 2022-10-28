@@ -58,28 +58,56 @@ module.exports = {
           rgba(97, 196, 183, 0.4) 5.37%,
           rgba(97, 196, 183, 0.1) 93.02%
         );`,
+        'main-tools-pattern--text': `linear-gradient(
+          107.51deg,
+          rgba(97, 196, 183, 0.7) 5.37%,
+          rgba(97, 196, 183, 0.8) 93.02%
+        );`,
         'learning-tools-pattern': `linear-gradient(
           106.91deg, 
           rgba(117, 92, 222, 0.4) 11.91%, 
           rgba(117, 92, 222, 0.1) 85.49%
         );`,
+        'learning-tools-pattern--text': `linear-gradient(
+          106.91deg, 
+          rgba(117, 92, 222, 0.7) 11.91%, 
+          rgba(117, 92, 222, 0.8) 85.49%
+        );`,
         'uiux-tools-pattern': `linear-gradient(153.09deg, 
           rgba(246, 165, 96, 0.4) 4.6%, 
           rgba(246, 165, 96, 0.1) 91.98%
+        );`,
+        'uiux-tools-pattern--text': `linear-gradient(153.09deg, 
+          rgba(246, 165, 96, 0.7) 4.6%, 
+          rgba(246, 165, 96, 0.8) 91.98%
         );`,
         'apps-pattern': `linear-gradient(
           155.86deg,
           rgba(243, 158, 158, 0.4) 6.48%,
           rgba(243, 158, 158, 0.1) 92.62%
         );`,
+        'apps-pattern--text': `linear-gradient(
+          155.86deg,
+          rgba(243, 158, 158, 0.7) 6.48%,
+          rgba(243, 158, 158, 0.8) 92.62%
+        );`,
         'resume-pattern': `linear-gradient(104.87deg, 
           rgba(235, 117, 101, 0.4) 11.03%, 
           rgba(235, 117, 101, 0.1) 91.28%
+        );`,
+        'resume-pattern--text': `linear-gradient(104.87deg, 
+          rgba(235, 117, 101, 0.7) 11.03%, 
+          rgba(235, 117, 101, 0.8) 91.28%
         );`,
         'other-tools-pattern': `linear-gradient(
           152.06deg,
           rgba(117, 92, 222, 0.4) -0.6%,
           rgba(117, 92, 222, 0.1) 85.46%
+        );`,
+        'other-tools-pattern--text': `linear-gradient(
+          152.06deg,
+          rgba(117, 92, 222, 0.7) -0.6%,
+          rgba(117, 92, 222, 0.8) 85.46%
         );`,
       },
       gridTemplateRows: {
