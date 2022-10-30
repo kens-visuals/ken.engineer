@@ -1,50 +1,8 @@
-import { StaticImageData } from 'next/image';
-
 // Components
 import ProjectCard from './ProjectCard';
 
-// Assets
-import markdownAppScreenshot from '../public/assets/markdown-notes-app-screenshot.png';
-import passwordAppScreenshot from '../public/assets/screenshot.png';
-import calculatorAppScreenshot from '../public/assets/calculator-app-screenshot.png';
-
-export interface ProjectsDataTypes {
-  title: string;
-  screenshot: StaticImageData;
-  description: string;
-  code: string;
-  liveSite: string;
-}
-
-const projectsData: ProjectsDataTypes[] = [
-  {
-    title: 'Markdown Notes PWA',
-    screenshot: markdownAppScreenshot,
-    description: `Simple markdown app that can be used to keep your notes safe and easy
-    accessible everywhere. Trust me it’s more secure than a Swiss bank,
-    nobody will know your deepest secrets.`,
-    code: 'https://github.com/kens-visuals/markdown-notes-app',
-    liveSite: 'https://markdown-notes-app-delta.vercel.app/',
-  },
-  {
-    title: 'Password Generator',
-    screenshot: passwordAppScreenshot,
-    description: `With this password generator no hacker in the world won’t be able to 
-    hack your social media accounts –– said no one ever. It’s side a simple 
-    side project, have fun playing with it!`,
-    code: 'https://github.com/kens-visuals/password-generator-app',
-    liveSite: 'https://password-generator-app-tawny.vercel.app/',
-  },
-  {
-    title: 'Calculator PWA',
-    screenshot: calculatorAppScreenshot,
-    description: `Multi theme calulator that can  be easily added to your phone or tablet 
-    to add some color to the boring calculations. Unless, if you’re counting
-    your millions, that’s not boring on any calculator, let alone this one.`,
-    code: 'https://github.com/kens-visuals/calculator-app',
-    liveSite: 'https://kens-visuals.github.io/calculator-app/',
-  },
-];
+// Data
+import { projectsData } from '../utils/projectsData';
 
 export default function Projects() {
   const projectCardsDisplay = projectsData.map((project) => (
