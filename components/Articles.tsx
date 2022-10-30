@@ -1,6 +1,38 @@
-import Image from 'next/image';
+// import Image from 'next/image';
+import { nanoid } from 'nanoid';
 
-export default function Articles() {
+interface ArticleTypes {
+  link: string;
+  title: string;
+  // eslint-disable-next-line react/no-unused-prop-types
+  pubDate: string;
+}
+
+export default function Articles({ posts }: any) {
+  const { items: articles } = posts;
+
+  const {
+    link: recentLink,
+    title: recentTitle,
+    thumbnail: recentThumbnail,
+  } = articles[0];
+
+  const articlesDisplay = articles
+    .slice(1, 4)
+    .map(({ link, title, pubDate }: ArticleTypes) => (
+      <li key={nanoid()} className="w-full lg:px-8">
+        <a
+          href={link}
+          className="my-4 block text-xl font-bold transition-all duration-300 hover:text-js-yellow lg:mt-0"
+        >
+          {title}
+        </a>
+        <span className="text-accent-grey-dark dark:text-accent-grey-light ">
+          Published: {pubDate}
+        </span>
+      </li>
+    ));
+
   return (
     <section className="my-60">
       <h2 className="text-heading-lg text-primary-dark dark:text-primary-light">
@@ -10,31 +42,40 @@ export default function Articles() {
 
       <div className="mt-10 items-stretch md:mt-8 lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:gap-4">
         <div className="relative rounded-xl lg:col-span-2">
-          <Image
-            src="https://images.unsplash.com/27/type-set.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2684&q=80"
+          {/* FIXME:  */}
+          {/* <Image
+            src="https://images.unsplash.com/photo-1568092461669-88ea238c24eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
             alt="article preview"
             height={500}
             width={500}
             className="w-full rounded-xl "
+          /> */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={recentThumbnail}
+            alt={recentTitle}
+            className="h-full w-full rounded-xl"
           />
 
           {/* Article section for tablet and biger viewports */}
           <div className="absolute inset-0 z-10 h-full w-full rounded-lg p-6 backdrop-blur-none md:flex md:items-end md:bg-primary-dark/50 md:backdrop-blur-sm">
             <article className="hidden md:inline-block">
               <div className="md:grid md:h-full md:grid-cols-2 md:justify-between">
-                <h4 className="font-inter text-heading-lg text-primary-light">
-                  The Truth About Learning TypeScript in 4 Minutes
+                <h4 className="font-inter text-heading-lg text-primary-light md:col-span-2">
+                  {recentTitle}
                 </h4>
 
-                <div className="md:flex md:flex-col md:justify-between">
-                  <p className="text-xl text-primary-light">
+                <div className="md:col-span-2 md:mt-4 md:flex md:flex-col md:justify-between">
+                  {/* <p className="text-xl text-primary-light">
                     We dive into the next evolution of the web that claims to
                     put the power of the platforms back into the hands of the
                     people. But is it really fulfilling its promise?
-                  </p>
+                  </p> */}
 
                   <a
-                    href="#"
+                    href={recentLink}
+                    target="block _blank"
+                    rel="noopener noreferrer"
                     className="flex w-full justify-center gap-2 rounded-xl bg-js-yellow py-4 text-center text-body uppercase tracking-widest text-primary-dark md:self-end"
                   >
                     Read More
@@ -62,17 +103,17 @@ export default function Articles() {
         {/* Article section for mobile viewports */}
         <article className="md:hidden">
           <h4 className="my-4 font-inter text-heading-sm text-primary-dark dark:text-primary-light">
-            The Truth About Learning TypeScript in 4 Minutes
+            {recentTitle}
           </h4>
 
-          <p className="my-6 text-body text-accent-grey-light dark:text-accent-grey-dark lg:mt-0">
+          {/* <p className="my-6 text-body text-accent-grey-light dark:text-accent-grey-dark lg:mt-0">
             We dive into the next evolution of the web that claims to put the
             power of the platforms back into the hands of the people. But is it
             really fulfilling its promise?
-          </p>
+          </p> */}
 
           <a
-            href="#"
+            href={recentLink}
             className="flex w-full justify-center gap-2 rounded-xl bg-js-yellow py-4 text-center text-body uppercase tracking-widest text-primary-dark"
           >
             Read More
@@ -100,49 +141,14 @@ export default function Articles() {
         </span>
 
         <ul className="mt-6 grid-cols-3  space-y-10 divide-y divide-js-yellow lg:grid lg:gap-6 lg:space-y-0 lg:divide-y-0 lg:divide-x">
-          <li className="w-full lg:px-8">
-            <a
-              href="#"
-              className="my-4 block text-xl font-bold transition-all duration-300 hover:text-js-yellow lg:mt-0"
-            >
-              Hydrogen VS Electric Cars
-            </a>
-            <span className="text-accent-grey-dark dark:text-accent-grey-light ">
-              Will hydrogen-fueled cars ever catch up to EVs?
-            </span>
-          </li>
-          <li className="w-full lg:px-8">
-            <a
-              href="#"
-              className="my-4 block text-xl font-bold transition-all duration-300 hover:text-js-yellow lg:mt-0"
-            >
-              The Downsides of AI Artistry
-            </a>
-            <span className="text-accent-grey-dark dark:text-accent-grey-light ">
-              What are the possible adverse effects of on-demand AI image
-              generation?
-            </span>
-          </li>
-          <li className="w-full lg:px-8">
-            <a
-              href="#"
-              className="my-4 block text-xl font-bold transition-all duration-300 hover:text-js-yellow lg:mt-0"
-            >
-              Is VC Funding Drying Up?
-            </a>
-            <span className="text-accent-grey-dark dark:text-accent-grey-light ">
-              Private funding by VC firms is down 50% YOY. We take a look at
-              what that means.
-            </span>
-          </li>
+          {articlesDisplay}
         </ul>
       </aside>
 
-      <div className="rounded-lg bg-main-tools-pattern p-8">
+      <div className="rounded-lg bg-main-tools-pattern p-6">
         <span className="text-heading-sm font-normal text-primary-dark dark:text-primary-light">
           Did you like my articles? Then the{' '}
           <a
-            href="#"
             target="block _blank"
             rel="noopener noreferrer"
             href="https://medium.com/subscribe/@kens_visuals"
