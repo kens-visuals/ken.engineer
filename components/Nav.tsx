@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 // Components
 import ThemeToggler from './ThemeToggler';
 
 export default function Nav() {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = ['Skills', 'Projects', 'Articles', 'Contact', 'Resume'];
 
@@ -17,8 +18,21 @@ export default function Nav() {
     </li>
   ));
 
+  const navVariants = {
+    hidden: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: { type: 'inertia', velocity: 50, opacity: { duration: 0.2 } },
+    },
+  };
+
   return (
-    <nav className="fixed top-0 left-1/2 z-50 w-[88%] max-w-5xl -translate-x-1/2 rounded-b-lg bg-primary-light/70 pb-4 pt-6 backdrop-blur-lg dark:bg-primary-dark/30">
+    <motion.nav
+      initial="hidden"
+      animate="animate"
+      variants={navVariants}
+      className="fixed top-0 left-1/2 z-50 w-[88%] max-w-5xl -translate-x-1/2 rounded-b-lg bg-primary-light/70 pb-4 pt-6 backdrop-blur-lg dark:bg-primary-dark/30"
+    >
       <div className="relative flex gap-4 px-6 font-inter md:static md:items-center">
         <Link
           className="mr-auto text-body uppercase text-primary-dark dark:text-primary-light"
@@ -88,6 +102,6 @@ export default function Nav() {
           </li>
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
