@@ -20,7 +20,7 @@ export default function About() {
             src={imgPreview}
             height={300}
             width={300}
-            className="my-10 lg:mb-0 lg:basis-1/2"
+            className="my-10 lg:mb-0 lg:basis-1/2 lg:p-6"
           />
 
           <div className="lg:basis-1/2">
