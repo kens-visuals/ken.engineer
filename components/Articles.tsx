@@ -8,7 +8,18 @@ interface ArticleTypes {
   pubDate: string;
 }
 
-export default function Articles({ posts }: any) {
+interface PostsTypes {
+  items: [
+    {
+      title: string;
+      pubDate: string;
+      link: string;
+      thumbnail: string;
+    }
+  ];
+}
+
+export default function Articles({ posts }: { posts: PostsTypes }) {
   const { items: articles } = posts;
 
   const {
