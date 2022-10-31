@@ -34,6 +34,8 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
       <li key={nanoid()} className="w-full lg:px-8">
         <a
           href={link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="my-4 block text-xl font-bold transition-all duration-300 hover:text-js-yellow lg:mt-0"
         >
           {title}
