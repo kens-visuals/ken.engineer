@@ -85,7 +85,7 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
 
                   <a
                     href={recentLink}
-                    target="block _blank"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex w-full justify-center gap-2 rounded-xl bg-js-yellow py-4 text-center text-body uppercase tracking-widest text-primary-dark md:self-end"
                   >
@@ -124,7 +124,9 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
           </p> */}
 
           <a
+            target="_blank"
             href={recentLink}
+            rel="noopener noreferrer"
             className="flex w-full justify-center gap-2 rounded-xl bg-js-yellow py-4 text-center text-body uppercase tracking-widest text-primary-dark"
           >
             Read More
@@ -160,7 +162,7 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
         <span className="text-heading-sm font-normal text-primary-dark dark:text-primary-light">
           Did you like my articles? Then the{' '}
           <a
-            target="block _blank"
+            target="_blank"
             rel="noopener noreferrer"
             href="https://medium.com/subscribe/@kens_visuals"
             className="animate-pulse border-b-2 border-b-teal-700 bg-teal-900 bg-clip-text font-bold text-transparent hover:text-primary-dark dark:bg-main-tools-pattern--text hover:dark:text-primary-light"
