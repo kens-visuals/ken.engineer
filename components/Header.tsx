@@ -7,10 +7,10 @@ export default function Header() {
       opacity: 1,
       transition: {
         delay: 0.2,
-        duration: 1,
         type: 'tween',
-        staggerChildren: 1.5,
+        duration: 0.8,
         delayChildren: 0.2,
+        staggerChildren: 1.2,
       },
     },
   };
