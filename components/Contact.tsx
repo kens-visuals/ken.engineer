@@ -10,7 +10,7 @@ export default function Contact() {
           Nothing personal, it’s just business.
         </span>
 
-        <p className="mt-2 max-w-lg text-accent-grey-light dark:text-accent-grey-dark">
+        <p className="mt-2 max-w-lg text-accent-grey-dark">
           I’d love to have a chat to see how I can help you. The best first step
           is for us to discuss your project. Then we can move forward from
           there.
