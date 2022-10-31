@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section className="my-60">
+    <section className="my-60" id="contact">
       <h3 className="text-heading-lg text-primary-dark dark:text-primary-light">
         <span className="text-js-yellow underline">Contact</span> me.
       </h3>

@@ -10,7 +10,7 @@ export default function Projects() {
   ));
 
   return (
-    <section className="my-60">
+    <section className="my-60" id="projects">
       <h2 className="text-heading-lg text-primary-dark dark:text-primary-light">
         40+ <span className="text-js-yellow underline">projects</span> and
         counting

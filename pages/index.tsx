@@ -7,6 +7,7 @@ import About from '../components/About';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Articles from '../components/Articles';
+import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 interface PostsTypes {
@@ -41,6 +42,8 @@ export default function Home({ posts }: { posts: PostsTypes }) {
           <Projects />
 
           <Articles posts={posts} />
+
+          <Contact />
         </main>
 
         <Footer />

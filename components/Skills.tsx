@@ -6,7 +6,7 @@ import * as icons from '../utils/skillsLogos';
 
 export default function Skills() {
   return (
-    <section className="my-60">
+    <section className="my-60 pt-20" id="skills">
       <h2 className="text-6xl text-heading-lg leading-tight text-primary-dark dark:text-primary-light">
         Ever imporving <span className="text-js-yellow underline">skills.</span>
       </h2>

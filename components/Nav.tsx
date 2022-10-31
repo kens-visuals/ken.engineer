@@ -8,12 +8,18 @@ import ThemeToggler from './ThemeToggler';
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = ['Skills', 'Projects', 'Articles', 'Contact', 'Resume'];
+  const menuItems = [
+    { name: 'Skills', path: '/#skills' },
+    { name: 'Projects', path: '/#projects' },
+    { name: 'Articles', path: '/#articles' },
+    { name: 'Contact', path: '/#contact' },
+    { name: 'Resume', path: '/#resume' },
+  ];
 
-  const menuItemsDisplay = menuItems.map((item) => (
-    <li key={item} className="flex items-center">
-      <Link href={`/#${item}`} scroll={false}>
-        {item}
+  const menuItemsDisplay = menuItems.map(({ name, path }) => (
+    <li key={name}>
+      <Link href={path} scroll={false}>
+        {name}
       </Link>
     </li>
   ));

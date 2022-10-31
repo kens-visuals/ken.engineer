@@ -8,7 +8,7 @@ import imgPreview from '../public/assets/image-preview.png';
 
 export default function About() {
   return (
-    <section className="mt-60">
+    <section className="mt-60" id="about">
       <h2 className="text-heading-lg lg:text-8xl">
         Hi, I’m <span className="text-js-yellow underline">Ken</span>
       </h2>
