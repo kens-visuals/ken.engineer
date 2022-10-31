@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 // Components
 import ThemeToggler from './ThemeToggler';
@@ -23,11 +23,11 @@ export default function Nav() {
     </li>
   ));
 
-  const navVariants = {
+  const navVariants: Variants = {
     hidden: { opacity: 0 },
     animate: {
       opacity: 1,
-      transition: { type: 'inertia', velocity: 50, opacity: { duration: 0.2 } },
+      transition: { duration: 0.5 },
     },
   };
 
