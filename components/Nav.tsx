@@ -37,9 +37,9 @@ export default function Nav() {
       initial="hidden"
       animate="animate"
       variants={navVariants}
-      className="fixed top-0 left-1/2 z-50 w-[88%] max-w-5xl -translate-x-1/2 rounded-b-lg bg-primary-light/70 pb-4 pt-6 backdrop-blur-lg dark:bg-primary-dark/30"
+      className="fixed top-0 left-1/2 z-50 flex w-full -translate-x-1/2 items-center justify-between rounded-b-lg bg-primary-light/70 pb-4 pt-6 backdrop-blur-lg dark:bg-primary-dark/30"
     >
-      <div className="relative flex gap-4 px-6 font-inter md:static md:items-center">
+      <div className="relative mx-auto flex w-[88%] max-w-5xl gap-4 font-inter md:static md:items-center">
         <Link
           className="mr-auto text-body uppercase text-primary-dark dark:text-primary-light"
           href="/"
