@@ -112,7 +112,7 @@ module.exports = {
         );`,
       },
       gridTemplateRows: {
-        'mobile-row-layout': 'repeat(6, 12rem)',
+        'mobile-row-layout': 'repeat(2, 12rem) repeat(4, 10rem)',
         'tablet-row-layout': 'repeat(3, 10rem)',
         'desk-row-layout': 'repeat(2, 10rem)',
       },
