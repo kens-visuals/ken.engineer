@@ -34,7 +34,7 @@ export default function Home({ posts }: { posts: PostsTypes }) {
       <Container>
         <Header />
 
-        <main className="mt-20 min-h-screen">
+        <main>
           <About />
 
           <Skills />
