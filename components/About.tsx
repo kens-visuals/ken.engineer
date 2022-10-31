@@ -2,13 +2,14 @@ import Image from 'next/image';
 
 // Components
 import Socials from './Socials';
+import Section from './Section';
 
 // Assets
 import imgPreview from '../public/assets/image-preview.png';
 
 export default function About() {
   return (
-    <section className="mt-60" id="about">
+    <Section id="about">
       <h2 className="text-heading-lg lg:text-8xl">
         Hi, I’m <span className="text-js-yellow underline">Ken</span>
       </h2>
@@ -50,6 +51,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

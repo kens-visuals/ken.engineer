@@ -13,7 +13,6 @@ export default function Nav() {
     { name: 'Projects', path: '/#projects' },
     { name: 'Articles', path: '/#articles' },
     { name: 'Contact', path: '/#contact' },
-    { name: 'Resume', path: '/#resume' },
   ];
 
   const menuItemsDisplay = menuItems.map(({ name, path }) => (

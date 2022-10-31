@@ -1,6 +1,9 @@
 // import Image from 'next/image';
 import { nanoid } from 'nanoid';
 
+// Components
+import Section from './Section';
+
 interface ArticleTypes {
   link: string;
   title: string;
@@ -47,7 +50,7 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
     ));
 
   return (
-    <section className="my-60" id="articles">
+    <Section id="articles">
       <h2 className="text-heading-lg text-primary-dark dark:text-primary-light">
         Tech <span className="text-js-yellow underline">articles</span> for
         everyone
@@ -174,6 +177,6 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
           is waiting for you
         </span>
       </div>
-    </section>
+    </Section>
   );
 }

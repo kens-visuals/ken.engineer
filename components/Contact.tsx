@@ -1,6 +1,9 @@
+// Components
+import Section from './Section';
+
 export default function Contact() {
   return (
-    <section className="my-60" id="contact">
+    <Section id="contact">
       <h3 className="text-heading-lg text-primary-dark dark:text-primary-light">
         <span className="text-js-yellow underline">Contact</span> me.
       </h3>
@@ -23,6 +26,6 @@ export default function Contact() {
           Say Hello!
         </a>
       </div>
-    </section>
+    </Section>
   );
 }

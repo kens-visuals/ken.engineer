@@ -1,5 +1,6 @@
 // Components
 import ProjectCard from './ProjectCard';
+import Section from './Section';
 
 // Data
 import { projectsData } from '../utils/projectsData';
@@ -10,7 +11,7 @@ export default function Projects() {
   ));
 
   return (
-    <section className="my-60" id="projects">
+    <Section id="projects">
       <h2 className="text-heading-lg text-primary-dark dark:text-primary-light">
         40+ <span className="text-js-yellow underline">projects</span> and
         counting
@@ -40,6 +41,6 @@ export default function Projects() {
           />
         </svg>
       </a>
-    </section>
+    </Section>
   );
 }

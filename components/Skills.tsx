@@ -1,12 +1,13 @@
 // Components
 import SkillsLogosList from './SkillsLogosList';
+import Section from './Section';
 
 // Assets
 import * as icons from '../utils/skillsLogos';
 
 export default function Skills() {
   return (
-    <section className="my-60 pt-20" id="skills">
+    <Section id="skills">
       <h2 className="text-6xl text-heading-lg leading-tight text-primary-dark dark:text-primary-light">
         Ever imporving <span className="text-js-yellow underline">skills.</span>
       </h2>
@@ -68,6 +69,6 @@ export default function Skills() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
