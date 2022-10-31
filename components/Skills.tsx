@@ -19,7 +19,7 @@ export default function Skills() {
           </ul>
 
           <div className="absolute inset-0 z-10 flex h-full w-full items-end rounded-lg backdrop-blur-[7px]">
-            <span className="bg-main-tools-pattern--text bg-clip-text p-4 text-transparent">
+            <span className="bg-primary-dark bg-main-tools-pattern--text bg-clip-text p-4 text-transparent dark:bg-primary-light/30">
               Main Tools
             </span>
           </div>
@@ -30,7 +30,7 @@ export default function Skills() {
           </ul>
 
           <div className="absolute inset-0 z-10 flex h-full w-full items-end rounded-lg backdrop-blur-[7px] ">
-            <span className="bg-learning-tools-pattern--text bg-clip-text p-4 text-transparent">
+            <span className="bg-primary-dark bg-learning-tools-pattern--text bg-clip-text p-4 text-transparent dark:bg-primary-light/30">
               Currently Learning
             </span>
           </div>
@@ -41,7 +41,7 @@ export default function Skills() {
           </ul>
 
           <div className="absolute inset-0 z-10 flex h-full w-full items-end rounded-lg backdrop-blur-[7px] ">
-            <span className="bg-uiux-tools-pattern--text bg-clip-text p-4 text-transparent">
+            <span className="bg-primary-dark bg-uiux-tools-pattern--text bg-clip-text p-4 text-transparent dark:bg-primary-light/30">
               UI/UX
             </span>
           </div>
@@ -52,7 +52,7 @@ export default function Skills() {
           </ul>
 
           <div className="absolute inset-0 z-10 flex h-full w-full items-end rounded-lg backdrop-blur-[7px] ">
-            <span className="bg-apps-pattern--text bg-clip-text p-4 text-transparent">
+            <span className="bg-primary-dark bg-apps-pattern--text bg-clip-text p-4 text-transparent dark:bg-primary-light/30">
               Apps
             </span>
           </div>
@@ -63,7 +63,7 @@ export default function Skills() {
           </ul>
 
           <div className="absolute inset-0 z-10 flex h-full w-full items-end rounded-lg backdrop-blur-[7px]">
-            <span className="bg-resume-pattern--text bg-clip-text p-4 text-transparent">
+            <span className="bg-primary-dark bg-resume-pattern--text bg-clip-text p-4 text-transparent dark:bg-primary-light/30">
               Other Tools
             </span>
           </div>
