@@ -43,7 +43,7 @@ export default function ProjectCard({
           {description}
         </p>
 
-        <div className="flex w-full flex-col gap-4 md:mt-4 md:flex-row">
+        <div className="mt-4 flex w-full flex-col gap-4 md:flex-row">
           <a
             target="_blank"
             rel="noopener noreferrer"
