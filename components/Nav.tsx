@@ -92,7 +92,7 @@ export default function Nav() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <ul className="absolute top-14 right-0 z-10 flex w-full max-w-sm flex-col gap-4 rounded-md bg-primary-light/70 p-4 text-primary-dark backdrop-blur-lg dark:bg-primary-dark/30 dark:text-primary-light md:hidden">
+          <ul className="absolute top-14 right-0 z-10 flex w-full max-w-sm flex-col gap-4 rounded-md bg-primary-light/70 p-6 text-primary-dark backdrop-blur-lg dark:bg-primary-dark/30 dark:text-primary-light md:hidden">
             {menuItemsDisplay}
             <li className="flex items-center">
               <ThemeToggler />
