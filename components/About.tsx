@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 
 // Components
 import Socials from './Socials';
@@ -8,10 +9,48 @@ import Section from './Section';
 import imgPreview from '../public/assets/image-preview.png';
 
 export default function About() {
+  const titleVariants: Variants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.4,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const letterVariants: Variants = {
+    initial: { opacity: 0, y: 20 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.6, 0.01, -0.05, 0.95],
+      },
+    },
+  };
+
   return (
     <Section id="about">
       <h2 className="text-heading-lg lg:text-8xl">
-        Hi, I’m <span className="text-js-yellow underline">Ken</span>
+        Hi, I’m{' '}
+        <motion.span
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 'all' }}
+          variants={titleVariants}
+        >
+          {'Ken'.split('').map((letter) => (
+            <motion.span
+              key={letter}
+              variants={letterVariants}
+              className="inline-block text-js-yellow"
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </motion.span>
       </h2>
 
       <div className="mt-10">
