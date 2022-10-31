@@ -6,7 +6,7 @@ export default function Section({
   children: JSX.Element[];
 }) {
   return (
-    <section id={id} className="my-60 pt-40 lg:pt-20">
+    <section id={id} className="my-40 pt-20 md:my-60 md:pt-40 lg:pt-20">
       {children}
     </section>
   );

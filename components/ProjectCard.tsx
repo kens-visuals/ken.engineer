@@ -29,7 +29,7 @@ export default function ProjectCard({
         />
       </div>
 
-      <div className="w-full lg:flex lg:flex-col  lg:justify-between">
+      <div className="w-full lg:flex lg:flex-col lg:justify-between">
         <h4 className="w-fit rounded-md bg-js-yellow p-2 text-heading-md leading-none text-primary-dark ">
           {title}
         </h4>
