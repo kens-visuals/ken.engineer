@@ -1,3 +1,5 @@
+import { motion, Variants } from 'framer-motion';
+
 interface SVGTypes {
   link: string;
   svg: JSX.Element;
@@ -167,17 +169,39 @@ const socials: SVGTypes[] = [
 ];
 
 export default function Socials() {
+  const listVariants: Variants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const listItemVariants: Variants = {
+    initial: { opacity: 0, x: -50 },
+    animate: { opacity: 1, x: 0 },
+  };
+
   const socialIconsDisplay = socials.map(({ link, svg }) => (
-    <li key={link}>
+    <motion.li variants={listItemVariants} key={link}>
       <a href={link} target="_blank" rel="noopener noreferrer">
         {svg}
       </a>
-    </li>
+    </motion.li>
   ));
 
   return (
-    <ul className="my-4 flex items-center justify-between md:basis-1/2 lg:gap-4">
+    <motion.ul
+      initial="initial"
+      whileInView="animate"
+      variants={listVariants}
+      viewport={{ once: true, amount: 'all' }}
+      className="my-4 flex items-center justify-between md:basis-1/2 lg:gap-4"
+    >
       {socialIconsDisplay}
-    </ul>
+    </motion.ul>
   );
 }
