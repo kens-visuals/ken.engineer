@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 // Contexts
 import { ThemeContext } from '../contexts/ThemeContext';
@@ -30,7 +30,7 @@ export default function ThemeToggler() {
     >
       <input
         type="checkbox"
-        value={`${isChecked}`}
+        value={`${isChecked}`} // turns string to boolean
         checked={isChecked}
         onChange={handleCheckedChange}
         id="default-toggle"
