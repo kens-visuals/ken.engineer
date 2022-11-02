@@ -185,21 +185,28 @@ export default function Socials() {
     animate: { opacity: 1, x: 0 },
   };
 
+  const hoverTransition = {
+    duration: 0.3,
+    type: 'spring',
+    stiffness: 600,
+    damping: 25,
+  };
+
   const listItemsHover = {
-    scale: 1.5,
     y: -10,
-    transition: {
-      duration: 0.3,
-      type: 'spring',
-      stiffness: 600,
-      damping: 25,
-    },
+    scale: 1.5,
+    transition: hoverTransition,
+  };
+
+  const listItemsTap = {
+    scale: 0.8,
+    transition: hoverTransition,
   };
 
   const socialIconsDisplay = socials.map(({ link, svg }) => (
     <motion.li
       key={link}
-      whileTap={listItemsHover}
+      whileTap={listItemsTap}
       whileHover={listItemsHover}
       variants={listItemVariants}
     >
