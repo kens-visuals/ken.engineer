@@ -11,6 +11,7 @@ export default function SkillsBackdrop({
       backdropFilter: `blur(0px)`,
       transition: {
         duration: 0.5,
+        ease: 'easeOut',
       },
     },
   };
@@ -22,7 +23,7 @@ export default function SkillsBackdrop({
       whileTap="animate"
       variants={skillsCardVariants}
       style={{ backdropFilter: 'blur(7px)' }}
-      className="absolute inset-0 z-10 flex h-full w-full items-end rounded-lg"
+      className="absolute inset-0 z-10 flex h-full w-full items-end rounded-lg hover:cursor-pointer"
     >
       {children}
     </motion.div>
