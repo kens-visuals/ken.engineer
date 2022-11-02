@@ -10,10 +10,10 @@ export default function SkillsLogosList({
   }[];
 }) {
   return (
-    <ul className="flex w-full flex-wrap items-center gap-1">
+    <ul className="flex w-full flex-wrap items-center gap-2">
       {logosArr.map(({ name, img }) => (
-        <li key={nanoid()}>
-          <Image src={img} alt={name} height={60} width={60} />
+        <li key={nanoid()} className="w-fit">
+          <Image src={img} alt={name} height={58} width={58} />
         </li>
       ))}
     </ul>
