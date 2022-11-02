@@ -9,8 +9,8 @@ export default function Header() {
         delay: 0.2,
         type: 'tween',
         duration: 0.8,
-        delayChildren: 0.2,
-        staggerChildren: 1.2,
+        delayChildren: 0.1,
+        staggerChildren: 1,
       },
     },
   };
