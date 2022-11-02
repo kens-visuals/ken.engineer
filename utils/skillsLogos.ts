@@ -31,6 +31,10 @@ export const mainToolsLogos = [
     name: 'Framer Motion',
     img: '/assets/logos/framer-motion.png',
   },
+  {
+    name: 'Firebase',
+    img: '/assets/logos/firebase.png',
+  },
 ];
 
 export const currentlyLearningLogos = [
@@ -114,9 +118,5 @@ export const otherToolsLogos = [
   {
     name: 'ESLint',
     img: '/assets/logos/eslint.png',
-  },
-  {
-    name: 'NPM',
-    img: '/assets/logos/npm.png',
   },
 ];
