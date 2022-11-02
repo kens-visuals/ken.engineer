@@ -8,13 +8,10 @@ import SkillsTitle from './SkillsTitle';
 import * as icons from '../utils/skillsLogos';
 
 // Hooks
-import useMediaQuery from '../hooks/useMediaQuery';
+// NOTE: use later for responsive animations
+// import useMediaQuery from '../hooks/useMediaQuery';
 
 export default function Skills() {
-  const matches = useMediaQuery('min-width(764px)');
-
-  console.log(matches);
-
   return (
     <Section id="skills">
       <h2 className="text-6xl text-heading-lg leading-tight text-primary-dark dark:text-primary-light">
