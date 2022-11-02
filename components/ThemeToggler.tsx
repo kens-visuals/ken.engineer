@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { motion, Variants } from 'framer-motion';
 
 // Contexts
 import { ThemeContext } from '../contexts/ThemeContext';
@@ -16,6 +17,12 @@ export default function ThemeToggler() {
     }
   };
 
+  const spring = {
+    type: 'spring',
+    stiffness: 500,
+    damping: 20,
+  };
+
   return (
     <label
       htmlFor="default-toggle"
@@ -29,7 +36,16 @@ export default function ThemeToggler() {
         id="default-toggle"
         className="peer sr-only"
       />
-      <div className="peer h-6 w-11 rounded-full bg-primary-dark after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-primary-dark after:bg-js-yellow after:transition-all peer-checked:bg-primary-dark peer-checked:after:translate-x-full peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-js-yellow dark:bg-primary-light dark:after:border-primary-light dark:peer-focus:ring-js-yellow" />
+      <div
+        data-checked={isChecked}
+        className="flex h-6 w-11 items-center justify-start rounded-full bg-primary-dark p-0.5 focus:ring-4 focus:ring-js-yellow peer-focus:ring-4 peer-focus:ring-js-yellow data-[checked='true']:justify-end dark:bg-primary-light"
+      >
+        <motion.span
+          layout
+          transition={spring}
+          className="inline-block h-5 w-5 rounded-full border border-primary-light bg-js-yellow  dark:border-primary-dark"
+        />
+      </div>
     </label>
   );
 }
