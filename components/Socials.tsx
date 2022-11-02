@@ -185,8 +185,24 @@ export default function Socials() {
     animate: { opacity: 1, x: 0 },
   };
 
+  const listItemsHover = {
+    scale: 1.5,
+    y: -10,
+    transition: {
+      duration: 0.3,
+      type: 'spring',
+      stiffness: 600,
+      damping: 25,
+    },
+  };
+
   const socialIconsDisplay = socials.map(({ link, svg }) => (
-    <motion.li variants={listItemVariants} key={link}>
+    <motion.li
+      key={link}
+      whileTap={listItemsHover}
+      whileHover={listItemsHover}
+      variants={listItemVariants}
+    >
       <a href={link} target="_blank" rel="noopener noreferrer">
         {svg}
       </a>
