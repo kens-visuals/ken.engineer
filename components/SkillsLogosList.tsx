@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { nanoid } from 'nanoid';
+import { motion, Variants } from 'framer-motion';
 
 export default function SkillsLogosList({
   logosArr,
@@ -9,13 +10,35 @@ export default function SkillsLogosList({
     img: string;
   }[];
 }) {
+  const listVariants: Variants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        delayChildren: 1.2,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    initial: { opacity: 0, x: -10 },
+    animate: { opacity: 1, x: 0 },
+  };
+
   return (
-    <ul className="flex w-full flex-wrap items-center gap-1">
+    <motion.ul
+      initial="initial"
+      whileInView="animate"
+      variants={listVariants}
+      viewport={{ once: true, amount: 'some' }}
+      className="col-span-full flex w-full flex-wrap items-center gap-2 md:gap-3"
+    >
       {logosArr.map(({ name, img }) => (
-        <li key={nanoid()}>
-          <Image src={img} alt={name} height={60} width={60} />
-        </li>
+        <motion.li variants={itemVariants} key={nanoid()}>
+          <Image src={img} alt={name} height={50} width={50} />
+        </motion.li>
       ))}
-    </ul>
+    </motion.ul>
   );
 }

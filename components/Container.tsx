@@ -1,4 +1,6 @@
+// Components
 import Nav from './Nav';
+import Footer from './Footer';
 
 export default function Container({ children }: { children: JSX.Element[] }) {
   return (
@@ -6,6 +8,8 @@ export default function Container({ children }: { children: JSX.Element[] }) {
       <Nav />
 
       {children}
+
+      <Footer />
     </div>
   );
 }

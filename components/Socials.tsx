@@ -1,3 +1,5 @@
+import { motion, Variants } from 'framer-motion';
+
 interface SVGTypes {
   link: string;
   svg: JSX.Element;
@@ -167,17 +169,62 @@ const socials: SVGTypes[] = [
 ];
 
 export default function Socials() {
+  const listVariants: Variants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const listItemVariants: Variants = {
+    initial: { opacity: 0, x: -50 },
+    animate: { opacity: 1, x: 0 },
+  };
+
+  const hoverTransition = {
+    duration: 0.3,
+    type: 'spring',
+    stiffness: 600,
+    damping: 25,
+  };
+
+  const listItemsHover = {
+    y: -10,
+    scale: 1.5,
+    transition: hoverTransition,
+  };
+
+  const listItemsTap = {
+    scale: 0.8,
+    transition: hoverTransition,
+  };
+
   const socialIconsDisplay = socials.map(({ link, svg }) => (
-    <li key={link}>
+    <motion.li
+      key={link}
+      whileTap={listItemsTap}
+      whileHover={listItemsHover}
+      variants={listItemVariants}
+    >
       <a href={link} target="_blank" rel="noopener noreferrer">
         {svg}
       </a>
-    </li>
+    </motion.li>
   ));
 
   return (
-    <ul className="my-4 flex items-center justify-between md:basis-1/2 lg:gap-4">
+    <motion.ul
+      initial="initial"
+      whileInView="animate"
+      variants={listVariants}
+      viewport={{ once: true, amount: 'all' }}
+      className="my-4 flex items-center justify-between md:basis-1/2 lg:gap-4"
+    >
       {socialIconsDisplay}
-    </ul>
+    </motion.ul>
   );
 }

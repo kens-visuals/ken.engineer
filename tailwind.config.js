@@ -112,9 +112,10 @@ module.exports = {
         );`,
       },
       gridTemplateRows: {
-        'mobile-row-layout': 'repeat(2, 12rem) repeat(4, 10rem)',
-        'tablet-row-layout': 'repeat(3, 10rem)',
-        'desk-row-layout': 'repeat(2, 10rem)',
+        'mobile-row-layout':
+          'repeat(2, minmax(12rem, auto)) repeat(4, minmax(10rem, auto))',
+        'tablet-row-layout': 'repeat(3, minmax(10rem, auto))',
+        'desk-row-layout': 'repeat(2, minmax(10rem, auto))',
       },
     },
   },
