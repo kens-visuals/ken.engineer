@@ -6,7 +6,8 @@ import Socials from './Socials';
 import Section from './Section';
 
 // Assets
-import imgPreview from '../public/assets/image-preview.png';
+// import imgPreview from '../public/assets/image-preview.png';
+import memoji from '../public/assets/memoji-notebook.png';
 
 // Animations
 import { fadeIn } from '../utils/animations';
@@ -61,14 +62,14 @@ export default function About() {
         whileInView="animate"
         variants={titleVariants}
         viewport={{ once: true, amount: 'some' }}
-        className="mt-10 md:flex md:items-center md:gap-8"
+        className="mt-10 md:flex md:items-end md:gap-8"
       >
         <Image
           alt="Ken Nersisyan"
-          src={imgPreview}
-          height={300}
-          width={300}
-          className="my-10 lg:mb-0 lg:basis-1/2 lg:p-6"
+          src={memoji}
+          height={200}
+          width={200}
+          className="pb-2 lg:basis-1/2"
         />
 
         <motion.div
