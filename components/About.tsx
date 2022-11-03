@@ -37,7 +37,7 @@ export default function About() {
 
   return (
     <Section id="about">
-      <h2 className="text-heading-lg lg:text-8xl">
+      <h2 className="text-heading-lg md:text-8xl">
         Hi, I’m{' '}
         <motion.span
           initial="initial"
@@ -62,14 +62,14 @@ export default function About() {
         whileInView="animate"
         variants={titleVariants}
         viewport={{ once: true, amount: 'some' }}
-        className="mt-10 md:flex md:items-end md:gap-8"
+        className="mt-10 md:grid md:grid-cols-2 md:items-center md:gap-8"
       >
         <Image
           alt="Ken Nersisyan"
           src={memoji}
-          height={200}
-          width={200}
-          className="pb-2 lg:basis-1/2"
+          height={100}
+          width={100}
+          className="flex w-full max-w-md items-end justify-center rounded-full bg-shape bg-contain bg-center bg-no-repeat p-4"
         />
 
         <motion.div

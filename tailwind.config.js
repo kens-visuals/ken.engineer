@@ -49,6 +49,7 @@ module.exports = {
         ],
       },
       backgroundImage: {
+        shape: 'url(../public/assets/image-preview.png)',
         'nav-pattern': `linear-gradient(
           180deg, 
           rgba(28, 28, 28, .1) 5%, 
