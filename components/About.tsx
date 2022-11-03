@@ -60,7 +60,7 @@ export default function About() {
         initial="initial"
         whileInView="animate"
         variants={titleVariants}
-        viewport={{ once: true, amount: 'all' }}
+        viewport={{ once: true, amount: 'some' }}
         className="mt-10 md:flex md:items-center md:gap-8"
       >
         <Image
