@@ -1,15 +1,7 @@
-// import Image from 'next/image';
 import { nanoid } from 'nanoid';
 
 // Components
 import Section from './Section';
-
-interface ArticleTypes {
-  link: string;
-  title: string;
-  // eslint-disable-next-line react/no-unused-prop-types
-  pubDate: string;
-}
 
 interface PostsTypes {
   items: [
@@ -20,6 +12,12 @@ interface PostsTypes {
       thumbnail: string;
     }
   ];
+}
+
+function convertDate(date: string) {
+  const [year, month, day] = date.slice(0, 10).split('-');
+
+  return `Published: ${month}/${day}/${year}`;
 }
 
 export default function Articles({ posts }: { posts: PostsTypes }) {
@@ -33,8 +31,11 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
 
   const articlesDisplay = articles
     .slice(1, 4)
-    .map(({ link, title, pubDate }: ArticleTypes) => (
-      <li key={nanoid()} className="w-full lg:px-8">
+    .map(({ link, title, pubDate }) => (
+      <li
+        key={nanoid()}
+        className="flex w-full flex-col justify-between lg:px-8"
+      >
         <a
           href={link}
           target="_blank"
@@ -44,7 +45,7 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
           {title}
         </a>
         <span className="text-accent-grey-dark dark:text-accent-grey-light ">
-          Published: {pubDate}
+          {convertDate(pubDate)}
         </span>
       </li>
     ));
@@ -58,14 +59,6 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
 
       <div className="mt-10 items-stretch md:mt-8 lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:gap-4">
         <div className="relative rounded-xl lg:col-span-2">
-          {/* FIXME:  */}
-          {/* <Image
-            src="https://images.unsplash.com/photo-1568092461669-88ea238c24eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
-            alt="article preview"
-            height={500}
-            width={500}
-            className="w-full rounded-xl "
-          /> */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={recentThumbnail}
@@ -82,12 +75,6 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
                 </h4>
 
                 <div className="md:col-span-2 md:mt-4 md:flex md:flex-col md:justify-between">
-                  {/* <p className="text-xl text-primary-light">
-                    We dive into the next evolution of the web that claims to
-                    put the power of the platforms back into the hands of the
-                    people. But is it really fulfilling its promise?
-                  </p> */}
-
                   <a
                     href={recentLink}
                     target="_blank"
@@ -121,12 +108,6 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
           <h4 className="my-4 font-inter text-heading-sm text-primary-dark dark:text-primary-light">
             {recentTitle}
           </h4>
-
-          {/* <p className="my-6 text-body text-accent-grey-light dark:text-accent-grey-dark lg:mt-0">
-            We dive into the next evolution of the web that claims to put the
-            power of the platforms back into the hands of the people. But is it
-            really fulfilling its promise?
-          </p> */}
 
           <a
             target="_blank"
