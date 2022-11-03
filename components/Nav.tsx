@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants, AnimatePresence } from 'framer-motion';
 
 // Components
 import ThemeToggler from './ThemeToggler';
@@ -15,14 +15,6 @@ export default function Nav() {
     { name: 'Contact', path: '/#contact' },
   ];
 
-  const menuItemsDisplay = menuItems.map(({ name, path }) => (
-    <li key={name}>
-      <Link href={path} scroll={false}>
-        {name}
-      </Link>
-    </li>
-  ));
-
   const navVariants: Variants = {
     hidden: { opacity: 0 },
     animate: {
@@ -30,6 +22,37 @@ export default function Nav() {
       transition: { duration: 0.5 },
     },
   };
+
+  const mobileNavVariants: Variants = {
+    initial: { x: '-100%' },
+    animate: {
+      x: 0,
+      transition: { delayChildren: 0.8, staggerChildren: 0.1 },
+    },
+    exit: {
+      x: '100%',
+      transition: {
+        delay: 1,
+        delayChildren: 0.2,
+        staggerChildren: 0.1,
+        staggerDirection: -1,
+      },
+    },
+  };
+
+  const mobileNavItemsVariants: Variants = {
+    initial: { opacity: 0, x: -10 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -10 },
+  };
+
+  const menuItemsDisplay = menuItems.map(({ name, path }) => (
+    <motion.li variants={mobileNavItemsVariants} key={name}>
+      <Link href={path} scroll={false}>
+        {name}
+      </Link>
+    </motion.li>
+  ));
 
   return (
     <motion.nav
@@ -90,14 +113,27 @@ export default function Nav() {
         </button>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <ul className="absolute top-14 right-0 z-10 flex w-full max-w-sm flex-col gap-4 rounded-md bg-primary-light/70 p-6 text-primary-dark backdrop-blur-lg dark:bg-primary-dark/30 dark:text-primary-light md:hidden">
-            {menuItemsDisplay}
-            <li className="flex items-center">
-              <ThemeToggler />
-            </li>
-          </ul>
-        )}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.ul
+              key="nav"
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              variants={mobileNavVariants}
+              className="absolute top-14 right-0 z-10 flex w-full max-w-sm flex-col gap-4 rounded-md bg-primary-light/70 p-6 text-primary-dark backdrop-blur-lg dark:bg-primary-dark/30 dark:text-primary-light md:hidden"
+            >
+              {menuItemsDisplay}
+              <motion.li
+                variants={mobileNavItemsVariants}
+                key="themetoggle"
+                className="flex items-center"
+              >
+                <ThemeToggler />
+              </motion.li>
+            </motion.ul>
+          )}
+        </AnimatePresence>
 
         {/* Tablet and Desktop menu */}
         <ul className="hidden w-full gap-4 p-4 pr-0 text-primary-dark dark:text-primary-light md:flex md:justify-end">
