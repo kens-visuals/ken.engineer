@@ -75,7 +75,7 @@ export default function About() {
           initial="initial"
           whileInView="animate"
           variants={fadeIn}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
           className="lg:basis-1/2"
         >
           <h3 className="text-heading-sm lg:text-heading-md">
