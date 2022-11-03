@@ -15,7 +15,7 @@ export default function SkillsLogosList({
     animate: {
       opacity: 1,
       transition: {
-        delayChildren: 1.2,
+        delayChildren: 0.8,
         staggerChildren: 0.1,
       },
     },
