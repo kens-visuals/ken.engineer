@@ -6,7 +6,6 @@ import Socials from './Socials';
 import Section from './Section';
 
 // Assets
-// import imgPreview from '../public/assets/image-preview.png';
 import memoji from '../public/assets/memoji-notebook.png';
 
 // Animations
@@ -67,8 +66,6 @@ export default function About() {
         <Image
           alt="Ken Nersisyan"
           src={memoji}
-          height={100}
-          width={100}
           className="flex w-full max-w-md items-end justify-center rounded-full bg-shape bg-contain bg-center bg-no-repeat p-4"
         />
 

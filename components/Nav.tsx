@@ -27,7 +27,7 @@ export default function Nav() {
     initial: { x: '-100%' },
     animate: {
       x: 0,
-      transition: { delayChildren: 0.8, staggerChildren: 0.1 },
+      transition: { delayChildren: 0.4, staggerChildren: 0.1 },
     },
     exit: {
       x: '100%',
