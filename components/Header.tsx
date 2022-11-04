@@ -21,7 +21,7 @@ export default function Header() {
   };
 
   return (
-    <header className="my-60">
+    <header className="my-64">
       <motion.h1
         initial="initial"
         animate="animate"
