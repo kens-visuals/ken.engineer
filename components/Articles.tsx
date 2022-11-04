@@ -1,4 +1,9 @@
+import { motion, Variants } from 'framer-motion';
 import { nanoid } from 'nanoid';
+
+// Hooks
+import useMediaQuery from '../hooks/useMediaQuery';
+import { fadeIn } from '../utils/animations';
 
 // Components
 import Section from './Section';
@@ -21,6 +26,8 @@ function convertDate(date: string) {
 }
 
 export default function Articles({ posts }: { posts: PostsTypes }) {
+  const matches = useMediaQuery('(min-width: 768px)');
+
   const { items: articles } = posts;
 
   const {
@@ -29,11 +36,35 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
     thumbnail: recentThumbnail,
   } = articles[0];
 
+  const articlesVariants: Variants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const backdropVariant: Variants = {
+    initial: { backdropFilter: `blur(0px)`, WebkitBackdropFilter: `blur(0px)` },
+    animate: {
+      backdropFilter: matches ? `blur(5px)` : `blur(0px)`,
+      WebkitBackdropFilter: matches ? `blur(5px)` : `blur(0px)`,
+      transition: {
+        duration: 1,
+        delayChildren: 0.8,
+      },
+    },
+  };
+
   const articlesDisplay = articles
     .slice(1, 4)
     .map(({ link, title, pubDate }) => (
-      <li
+      <motion.li
         key={nanoid()}
+        variants={fadeIn}
         className="flex w-full flex-col justify-between lg:px-8"
       >
         <a
@@ -47,7 +78,7 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
         <span className="text-accent-grey-dark dark:text-accent-grey-light ">
           {convertDate(pubDate)}
         </span>
-      </li>
+      </motion.li>
     ));
 
   return (
@@ -58,17 +89,33 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
       </h2>
 
       <div className="mt-10 items-stretch md:mt-8 lg:grid lg:grid-cols-2 lg:grid-rows-1 lg:gap-4">
-        <div className="relative rounded-xl lg:col-span-2">
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          variants={articlesVariants}
+          viewport={{ once: true, amount: 'some' }}
+          className="relative rounded-xl lg:col-span-2"
+        >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <motion.img
+            variants={fadeIn}
             src={recentThumbnail}
             alt={recentTitle}
             className="h-full w-full rounded-xl"
           />
 
           {/* Article section for tablet and biger viewports */}
-          <div className="absolute inset-0 z-10 h-full w-full rounded-lg p-6 backdrop-blur-none md:flex md:items-end md:bg-primary-dark/50 md:backdrop-blur-sm">
-            <article className="hidden md:inline-block">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            variants={backdropVariant}
+            viewport={{ once: true, amount: 'all' }}
+            className="absolute inset-0 z-10 h-full w-full rounded-lg p-6 backdrop-blur-none md:flex md:items-end md:bg-primary-dark/50"
+          >
+            <motion.article
+              variants={fadeIn}
+              className="hidden md:inline-block"
+            >
               <div className="md:grid md:h-full md:grid-cols-2 md:justify-between">
                 <h4 className="font-inter text-heading-lg text-primary-light md:col-span-2">
                   {recentTitle}
@@ -99,12 +146,12 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
                   </a>
                 </div>
               </div>
-            </article>
-          </div>
-        </div>
+            </motion.article>
+          </motion.div>
+        </motion.div>
 
         {/* Article section for mobile viewports */}
-        <article className="md:hidden">
+        <motion.article className="md:hidden">
           <h4 className="my-4 font-inter text-heading-sm text-primary-dark dark:text-primary-light">
             {recentTitle}
           </h4>
@@ -131,7 +178,7 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
               />
             </svg>
           </a>
-        </article>
+        </motion.article>
       </div>
 
       <aside className="my-6 rounded-xl bg-primary-dark p-6 text-primary-light dark:bg-primary-light dark:text-primary-dark lg:p-8 lg:py-14">
@@ -139,9 +186,15 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
           New
         </span>
 
-        <ul className="mt-6 grid-cols-3  space-y-10 divide-y divide-js-yellow lg:grid lg:gap-6 lg:space-y-0 lg:divide-y-0 lg:divide-x">
+        <motion.ul
+          initial="initial"
+          whileInView="animate"
+          variants={articlesVariants}
+          viewport={{ once: true, amount: 'some' }}
+          className="mt-6 grid-cols-3  space-y-10 divide-y divide-js-yellow lg:grid lg:gap-6 lg:space-y-0 lg:divide-y-0 lg:divide-x"
+        >
           {articlesDisplay}
-        </ul>
+        </motion.ul>
       </aside>
 
       <div className="rounded-lg bg-main-tools-pattern p-6">

@@ -34,6 +34,17 @@ export default function About() {
     },
   };
 
+  const buttonVariant: Variants = {
+    initial: { opacity: 0, x: -50 },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 1.6,
+      },
+    },
+  };
+
   return (
     <Section id="about">
       <h2 className="text-heading-lg md:text-8xl">
@@ -90,14 +101,18 @@ export default function About() {
           <div className="lg:flex lg:items-center lg:justify-between lg:gap-4">
             <Socials />
 
-            <a
+            <motion.a
+              initial="initial"
+              whileInView="animate"
+              variants={buttonVariant}
+              viewport={{ once: true, amount: 'some' }}
               href="mailto:karapet.nersisyan@yahoo.com"
               target="_blank"
               rel="noopener noreferrer"
               className="my-4 inline-block w-full rounded-full bg-js-yellow p-4 text-center text-2xl font-bold uppercase tracking-widest text-primary-dark md:basis-1/2 lg:p-2.5"
             >
               Hire Me!
-            </a>
+            </motion.a>
           </div>
         </motion.div>
       </motion.div>
