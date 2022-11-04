@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 
 // Interface
 import { ProjectsDataTypes } from '../utils/projectsData';
@@ -11,6 +12,26 @@ export default function ProjectCard({
   liveSite,
   techStack,
 }: ProjectsDataTypes) {
+  const projectVariants: Variants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const projectChildrenVariants = (direction: 'left' | 'right'): Variants => ({
+    initial: { x: direction === 'left' ? -10 : 10, opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+  });
+
+  const projectButtonsHover: Variants = {
+    initial: { scale: 1 },
+    animate: { scale: 1.1 },
+  };
+
   const techStackLogosDisplay = techStack.map(({ id, img }) => (
     <li key={id}>
       <Image src={img} alt="programming language logo" height={40} width={40} />
@@ -18,8 +39,17 @@ export default function ProjectCard({
   ));
 
   return (
-    <div className="mt-4 flex flex-col gap-6 overflow-hidden rounded-2xl border border-accent-grey-light p-5 dark:border-accent-grey-dark lg:flex-row">
-      <div className="h-fit w-full lg:max-w-md lg:flex-grow-0">
+    <motion.div
+      initial="initial"
+      whileInView="animate"
+      variants={projectVariants}
+      viewport={{ once: true, amount: 'all' }}
+      className="mt-4 flex flex-col gap-6 rounded-2xl border border-accent-grey-light p-5 dark:border-accent-grey-dark lg:flex-row"
+    >
+      <motion.div
+        variants={projectChildrenVariants('left')}
+        className="h-fit w-full lg:max-w-md lg:flex-grow-0"
+      >
         <Image
           src={screenshot}
           alt="markdown app screenshot"
@@ -27,9 +57,12 @@ export default function ProjectCard({
           width={1000}
           className="cursor-pointer rounded-xl grayscale transition-all duration-300 hover:grayscale-0"
         />
-      </div>
+      </motion.div>
 
-      <div className="w-full lg:flex lg:flex-col lg:justify-between">
+      <motion.div
+        variants={projectChildrenVariants('right')}
+        className="w-full lg:flex lg:flex-col lg:justify-between"
+      >
         <h4 className="w-fit rounded-md bg-js-yellow p-2 text-heading-md leading-none text-primary-dark ">
           {title}
         </h4>
@@ -44,24 +77,30 @@ export default function ProjectCard({
         </p>
 
         <div className="mt-4 flex w-full flex-col gap-4 md:flex-row">
-          <a
+          <motion.a
+            href={code}
             target="_blank"
             rel="noopener noreferrer"
-            href={code}
+            initial="initial"
+            whileHover="animate"
+            variants={projectButtonsHover}
             className="w-full rounded-full border border-js-yellow py-2 text-center text-body font-bold tracking-wider text-primary-dark dark:text-js-yellow"
           >
             Code
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            href={liveSite}
             target="_blank"
             rel="noopener noreferrer"
-            href={liveSite}
+            initial="initial"
+            whileHover="animate"
+            variants={projectButtonsHover}
             className="w-full rounded-full bg-js-yellow py-2 text-center text-body font-bold tracking-wider text-primary-dark"
           >
             Live Site
-          </a>
+          </motion.a>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
