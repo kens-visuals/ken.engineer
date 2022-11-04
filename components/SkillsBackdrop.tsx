@@ -6,9 +6,10 @@ export default function SkillsBackdrop({
   children: JSX.Element;
 }) {
   const skillsCardVariants: Variants = {
-    initial: { backdropFilter: `blur(7px)` },
+    initial: { backdropFilter: `blur(7px)`, WebkitBackdropFilter: `blur(7px)` },
     animate: {
       backdropFilter: `blur(0px)`,
+      WebkitBackdropFilter: `blur(0px)`,
       transition: {
         duration: 0.5,
         ease: 'easeOut',
