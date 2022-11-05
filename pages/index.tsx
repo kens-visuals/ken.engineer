@@ -35,7 +35,7 @@ export default function Home({ posts }: { posts: PostsTypes }) {
               'Portfolio website of front-end engineer Ken Nersisyan',
             images: [
               {
-                url: 'https://raw.githubusercontent.com/kens-visuals/ken.engineer/main/public/seo-image.png',
+                url: 'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y29kZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
                 alt: 'Screenshot of the main heading that says front-end engineer of your dreams',
               },
             ],
