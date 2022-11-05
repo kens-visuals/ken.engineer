@@ -18,6 +18,7 @@ export default function ProjectCard({
       opacity: 1,
       transition: {
         delayChildren: 0.1,
+        ease: 'easeIn',
       },
     },
   };
