@@ -1,7 +1,4 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-import { DefaultSeo } from 'next-seo';
-
-import SEO from '../next-seo.config';
 
 export default function Document() {
   return (
@@ -17,8 +14,6 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&display=swap"
           rel="stylesheet"
         />
-
-        <DefaultSeo {...SEO} />
 
         {/* <!-- HTML Meta Tags --> */}
         {/* <meta
