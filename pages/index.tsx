@@ -26,7 +26,7 @@ export default function Home({ posts }: { posts: PostsTypes }) {
   return (
     <div className="bg-primary relative min-h-screen bg-primary-light font-jakarta selection:bg-js-yellow selection:text-primary-light dark:bg-primary-dark">
       <Head>
-        <DefaultSeo
+        {/* <DefaultSeo
           openGraph={{
             locale: 'en_US',
             url: 'https://www.ken.engineer/',
@@ -46,7 +46,16 @@ export default function Home({ posts }: { posts: PostsTypes }) {
             site: '@kens_visuals',
             cardType: 'summary_large_image',
           }}
+        /> */}
+        <meta
+          name="description"
+          content="Portfolio website of front-end engineer Ken Nersisyan"
         />
+        <meta name="author" content="Ken Nersisyan" />
+        <meta property="og:title" content="Ken's Portfolio" />
+        <meta property="og:url" content="https://www.ken.engineer/" />
+        <meta property="og:image" content="https://mugshotbot.com/m/vkMROGu0" />
+        <meta property="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
