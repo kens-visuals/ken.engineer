@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { DefaultSeo } from 'next-seo';
+// import { DefaultSeo } from 'next-seo';
 
 // Components
 import Container from '../components/Container';
@@ -47,15 +47,37 @@ export default function Home({ posts }: { posts: PostsTypes }) {
             cardType: 'summary_large_image',
           }}
         /> */}
+
+        {/* <!-- HTML Meta Tags --> */}
+        <title>Ken’s Portfolio</title>
         <meta
           name="description"
           content="Portfolio website of front-end engineer Ken Nersisyan"
         />
-        <meta name="author" content="Ken Nersisyan" />
-        <meta property="og:title" content="Ken's Portfolio" />
+
+        {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://www.ken.engineer/" />
+        <meta property="og:title" content="Ken’s Portfolio" />
+        <meta
+          property="og:description"
+          content="Portfolio website of front-end engineer Ken Nersisyan"
+        />
         <meta property="og:image" content="https://mugshotbot.com/m/vkMROGu0" />
-        <meta property="twitter:card" content="summary_large_image" />
+
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="ken.engineer" />
+        <meta property="twitter:url" content="https://www.ken.engineer/" />
+        <meta name="twitter:title" content="Ken’s Portfolio" />
+        <meta
+          name="twitter:description"
+          content="Portfolio website of front-end engineer Ken Nersisyan"
+        />
+        <meta
+          name="twitter:image"
+          content="https://mugshotbot.com/m/vkMROGu0"
+        />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
