@@ -1,4 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import { DefaultSeo } from 'next-seo';
+
+import SEO from '../next-seo.config';
 
 export default function Document() {
   return (
@@ -15,15 +18,16 @@ export default function Document() {
           rel="stylesheet"
         />
 
-        {/* Meta */}
+        <DefaultSeo {...SEO} />
+
         {/* <!-- HTML Meta Tags --> */}
-        <meta
+        {/* <meta
           name="description"
           content="Portfolio website of front-end engineer Ken Nersisyan"
-        />
+        /> */}
 
         {/* <!-- Facebook Meta Tags --> */}
-        <meta property="og:url" content="https://www.ken.engineer/" />
+        {/* <meta property="og:url" content="https://www.ken.engineer/" />
         <meta property="og:title" content="Ken’s Portfolio" />
         <meta
           property="og:description"
@@ -32,7 +36,7 @@ export default function Document() {
         <meta property="og:image" content="https://mugshotbot.com/m/vkMROGu0" />
 
         {/* <!-- Twitter Meta Tags --> */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="ken.engineer" />
         <meta property="twitter:url" content="https://www.ken.engineer/" />
         <meta name="twitter:title" content="Ken’s Portfolio" />
@@ -43,7 +47,7 @@ export default function Document() {
         <meta
           name="twitter:image"
           content="https://mugshotbot.com/m/vkMROGu0"
-        />
+        /> */}
 
         {/* Favicon */}
         <link
