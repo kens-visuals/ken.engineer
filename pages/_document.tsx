@@ -16,6 +16,7 @@ export default function Document() {
         />
 
         {/* <!-- HTML Meta Tags --> */}
+        <meta name="title" content="Ken Nersisyan –– Portfolio" />
         <meta
           name="description"
           content="Portfolio website of front-end engineer Ken Nersisyan"
@@ -23,7 +24,7 @@ export default function Document() {
 
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://www.ken.engineer/" />
-        <meta property="og:title" content="Ken’s Portfolio" />
+        <meta property="og:title" content="Ken Nersisyan –– Portfolio" />
         <meta
           property="og:description"
           content="Portfolio website of front-end engineer Ken Nersisyan"
@@ -37,7 +38,7 @@ export default function Document() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="ken.engineer" />
         <meta property="twitter:url" content="https://www.ken.engineer/" />
-        <meta name="twitter:title" content="Ken’s Portfolio" />
+        <meta name="twitter:title" content="Ken Nersisyan –– Portfolio" />
         <meta
           name="twitter:description"
           content="Portfolio website of front-end engineer Ken Nersisyan"
