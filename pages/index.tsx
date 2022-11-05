@@ -96,7 +96,7 @@ export default function Home({ posts }: { posts: PostsTypes }) {
           sizes="16x16"
           href="../public/favicon_io/favicon-16x16.png"
         />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="manifest" href="../public/favicon_io/site.webmanifest" />
       </Head>
 
       <Container>
