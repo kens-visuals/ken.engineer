@@ -32,16 +32,16 @@ export default function Home({ posts }: { posts: PostsTypes }) {
         <NextSeo
           title="Ken’s Portfolio"
           description="Portfolio website of front-end engineer Ken Nersisyan"
-          canonical="https://www.canonical.ie/"
+          canonical="https://www.ken.engineer/"
           openGraph={{
+            locale: 'en_US',
             url: 'https://www.ken.engineer/',
-            title: 'Open Graph Title',
-            description: 'Open Graph Description',
+            title: 'Ken’s Portfolio',
+            description:
+              'Portfolio website of front-end engineer Ken Nersisyan',
             images: [
               {
-                url: '/public/seo-image.png',
-                width: 800,
-                height: 600,
+                url: 'https://github.com/kens-visuals/ken.engineer/blob/main/public/seo-image.png?raw=true',
                 alt: 'Screenshot of the main heading that says front-end engineer of your dreams',
                 type: 'image/png',
               },
