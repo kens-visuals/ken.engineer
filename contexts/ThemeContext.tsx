@@ -16,7 +16,7 @@ export const ThemeContext = createContext<ValuesTypes>({
   setIsChecked: () => null,
 });
 
-export function ThemeToggleProvider({ children }: { children: JSX.Element[] }) {
+export function ThemeToggleProvider({ children }: { children: JSX.Element }) {
   const [mounted, setMounted] = useState(false);
   const [isChecked, setIsChecked] = useState<boolean>(false);
   const { systemTheme, setTheme, theme } = useTheme();

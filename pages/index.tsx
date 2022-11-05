@@ -1,7 +1,5 @@
 import Head from 'next/head';
 
-// import { DefaultSeo } from 'next-seo';
-
 // Components
 import Container from '../components/Container';
 import Header from '../components/Header';
@@ -26,27 +24,6 @@ export default function Home({ posts }: { posts: PostsTypes }) {
   return (
     <div className="bg-primary relative min-h-screen bg-primary-light font-jakarta selection:bg-js-yellow selection:text-primary-light dark:bg-primary-dark">
       <Head>
-        {/* <DefaultSeo
-          openGraph={{
-            locale: 'en_US',
-            url: 'https://www.ken.engineer/',
-            title: 'Ken’s Portfolio',
-            description:
-              'Portfolio website of front-end engineer Ken Nersisyan',
-            images: [
-              {
-                url: 'https://mugshotbot.com/m/vkMROGu0',
-                alt: 'Ken’s Portfolio',
-              },
-            ],
-            siteName: 'ken.engineer',
-          }}
-          twitter={{
-            handle: '@kens_visuals',
-            site: '@kens_visuals',
-            cardType: 'summary_large_image',
-          }}
-        /> */}
         <title>Ken’s Portfolio</title>
       </Head>
 

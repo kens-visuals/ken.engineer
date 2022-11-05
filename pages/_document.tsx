@@ -16,22 +16,25 @@ export default function Document() {
         />
 
         {/* <!-- HTML Meta Tags --> */}
-        {/* <meta
+        <meta
           name="description"
           content="Portfolio website of front-end engineer Ken Nersisyan"
-        /> */}
+        />
 
         {/* <!-- Facebook Meta Tags --> */}
-        {/* <meta property="og:url" content="https://www.ken.engineer/" />
+        <meta property="og:url" content="https://www.ken.engineer/" />
         <meta property="og:title" content="Ken’s Portfolio" />
         <meta
           property="og:description"
           content="Portfolio website of front-end engineer Ken Nersisyan"
         />
-        <meta property="og:image" content="https://mugshotbot.com/m/vkMROGu0" />
+        <meta
+          property="og:image"
+          content="https://raw.githubusercontent.com/kens-visuals/ken.engineer/main/public/assets/seo-img.png"
+        />
 
         {/* <!-- Twitter Meta Tags --> */}
-        {/* <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="ken.engineer" />
         <meta property="twitter:url" content="https://www.ken.engineer/" />
         <meta name="twitter:title" content="Ken’s Portfolio" />
@@ -41,8 +44,8 @@ export default function Document() {
         />
         <meta
           name="twitter:image"
-          content="https://mugshotbot.com/m/vkMROGu0"
-        /> */}
+          content="https://raw.githubusercontent.com/kens-visuals/ken.engineer/main/public/assets/seo-img.png"
+        />
 
         {/* Favicon */}
         <link
