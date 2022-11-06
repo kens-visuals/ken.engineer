@@ -3,10 +3,12 @@ import { nanoid } from 'nanoid';
 
 // Hooks
 import useMediaQuery from '../hooks/useMediaQuery';
-import { fadeIn } from '../utils/animations';
 
 // Components
 import Section from './Section';
+
+// Animations
+import { buttonHover, fadeIn } from '../utils/animations';
 
 interface PostsTypes {
   items: [
@@ -57,6 +59,12 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
         delayChildren: 0.8,
       },
     },
+  };
+
+  const buttonCustomHover = {
+    ...buttonHover,
+    y: 0,
+    scale: 0.95,
   };
 
   const articlesDisplay = articles
@@ -122,11 +130,12 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
                 </h4>
 
                 <div className="md:col-span-2 md:mt-4 md:flex md:flex-col md:justify-between">
-                  <a
+                  <motion.a
                     href={recentLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex w-full justify-center gap-2 rounded-xl bg-js-yellow py-4 text-center text-body uppercase tracking-widest text-primary-dark md:self-end"
+                    whileHover={buttonCustomHover}
+                    className="flex w-full justify-center gap-2 rounded-xl border border-transparent bg-js-yellow py-4 text-center text-body uppercase tracking-widest text-primary-dark md:self-end"
                   >
                     Read More
                     <svg
@@ -143,7 +152,7 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
                         d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
                       />
                     </svg>
-                  </a>
+                  </motion.a>
                 </div>
               </div>
             </motion.article>

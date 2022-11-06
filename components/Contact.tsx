@@ -1,5 +1,18 @@
+import { motion } from 'framer-motion';
+
 // Components
 import Section from './Section';
+
+// Animations
+import { buttonHover } from '../utils/animations';
+
+const buttonCustomHover = {
+  ...buttonHover,
+  y: -3,
+  scale: 1,
+  color: '#1c1c1c',
+  borderColor: '#1c1c1c',
+};
 
 export default function Contact() {
   return (
@@ -19,12 +32,13 @@ export default function Contact() {
           there.
         </p>
 
-        <a
+        <motion.a
+          whileHover={buttonCustomHover}
           href="mailto:karapet.nersisyan@yahoo.com"
-          className="mt-8 block rounded-xl bg-js-yellow p-4 text-center text-heading-sm text-primary-dark"
+          className="mt-8 block rounded-xl border border-transparent bg-js-yellow p-4 text-center text-heading-sm text-primary-dark"
         >
           Say Hello!
-        </a>
+        </motion.a>
       </div>
     </Section>
   );

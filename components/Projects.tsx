@@ -1,9 +1,20 @@
+import { motion } from 'framer-motion';
+
 // Components
 import ProjectCard from './ProjectCard';
 import Section from './Section';
 
 // Data
 import { projectsData } from '../utils/projectsData';
+
+// Animations
+import { buttonHover } from '../utils/animations';
+
+const buttonCustomHover = {
+  ...buttonHover,
+  y: 10,
+  scale: 0.95,
+};
 
 export default function Projects() {
   const projectCardsDisplay = projectsData.map((project) => (
@@ -19,7 +30,8 @@ export default function Projects() {
 
       <div className="mt-10">{projectCardsDisplay}</div>
 
-      <a
+      <motion.a
+        whileHover={buttonCustomHover}
         target="_blank"
         rel="noopener noreferrer"
         href="https://github.com/kens-visuals/frontend-mentor"
@@ -40,7 +52,7 @@ export default function Projects() {
             d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
           />
         </svg>
-      </a>
+      </motion.a>
     </Section>
   );
 }

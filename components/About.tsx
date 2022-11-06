@@ -9,7 +9,7 @@ import Section from './Section';
 import memoji from '../public/assets/memoji-notebook.png';
 
 // Animations
-import { fadeIn } from '../utils/animations';
+import { fadeIn, buttonHover } from '../utils/animations';
 
 export default function About() {
   const titleVariants: Variants = {
@@ -103,13 +103,14 @@ export default function About() {
 
             <motion.a
               initial="initial"
+              whileHover={buttonHover}
               whileInView="animate"
               variants={buttonVariant}
               viewport={{ once: true, amount: 'some' }}
               href="mailto:karapet.nersisyan@yahoo.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="my-4 inline-block w-full rounded-full bg-js-yellow p-4 text-center text-2xl font-bold uppercase tracking-widest text-primary-dark md:basis-1/2 lg:p-2.5"
+              className="my-4 inline-block w-full rounded-full border border-transparent bg-js-yellow p-4 text-center text-2xl font-bold uppercase tracking-widest text-primary-dark md:basis-1/2 lg:p-2.5"
             >
               Hire Me!
             </motion.a>

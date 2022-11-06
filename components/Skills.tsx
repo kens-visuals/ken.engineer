@@ -7,10 +7,6 @@ import SkillsTitle from './SkillsTitle';
 // Assets
 import * as icons from '../utils/skillsLogos';
 
-// Hooks
-// NOTE: use later for responsive animations
-// import useMediaQuery from '../hooks/useMediaQuery';
-
 export default function Skills() {
   return (
     <Section id="skills">
