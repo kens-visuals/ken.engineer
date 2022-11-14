@@ -35,13 +35,11 @@ export const projectsData: ProjectsDataTypes[] = [
     ],
   },
   {
-    title: 'Password Generator',
-    screenshot: '/assets/screenshot.png',
-    description: `With this password generator no hacker in the world won’t be able to 
-      hack your social media accounts –– said no one ever. It’s side a simple 
-      side project, have fun playing with it!`,
-    code: 'https://github.com/kens-visuals/password-generator-app',
-    liveSite: 'https://password-generator-app-tawny.vercel.app/',
+    title: 'Pomodoro PWA',
+    screenshot: '/assets/pomodoro-app-screenshot.png',
+    description: `Multi-theme pomodoro app, with sound effects that notify you when your time is up, so you can actually focus on your tasks. Instead of going back and forth to see if this technique of focusing actually works`,
+    code: 'https://github.com/kens-visuals/pomodoro-app',
+    liveSite: 'https://pomodoro-app-mu-seven.vercel.app/',
     techStack: [
       {
         id: 1,
