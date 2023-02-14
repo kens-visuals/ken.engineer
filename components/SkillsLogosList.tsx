@@ -31,7 +31,7 @@ export default function SkillsLogosList({
       initial="initial"
       whileInView="animate"
       variants={listVariants}
-      viewport={{ once: true, amount: 'some' }}
+      viewport={{ amount: 'some' }}
       className="col-span-full flex w-full flex-wrap items-center gap-2 md:gap-3"
     >
       {logosArr.map(({ name, img }) => (

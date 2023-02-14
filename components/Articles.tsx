@@ -79,11 +79,11 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="my-4 block text-xl font-bold transition-all duration-300 hover:text-js-yellow lg:mt-0"
+          className="my-4 block text-xl font-bold transition-all duration-300 hover:text-js-yellow lg:mt-0 lg:text-2xl"
         >
           {title}
         </a>
-        <span className="text-accent-grey-dark dark:text-accent-grey-light ">
+        <span className="text-xs text-accent-grey-dark dark:text-accent-grey-light ">
           {convertDate(pubDate)}
         </span>
       </motion.li>
@@ -199,7 +199,7 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
           initial="initial"
           whileInView="animate"
           variants={articlesVariants}
-          viewport={{ once: true, amount: 'some' }}
+          viewport={{ amount: 'some' }}
           className="mt-6 grid-cols-3  space-y-10 divide-y divide-js-yellow lg:grid lg:gap-6 lg:space-y-0 lg:divide-y-0 lg:divide-x"
         >
           {articlesDisplay}

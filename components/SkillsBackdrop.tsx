@@ -11,7 +11,7 @@ export default function SkillsBackdrop({
       backdropFilter: `blur(0px)`,
       WebkitBackdropFilter: `blur(0px)`,
       transition: {
-        duration: 0.5,
+        duration: 0.3,
         ease: 'easeOut',
       },
     },
