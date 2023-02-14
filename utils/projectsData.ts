@@ -12,6 +12,39 @@ export interface ProjectsDataTypes {
 
 export const projectsData: ProjectsDataTypes[] = [
   {
+    title: 'Game Zone: Social Media',
+    screenshot: '/assets/game-zone-screenshot.png',
+    description: `The biggest social social media platform for gamers. Well, maybe not in our universe, but it sure is in an alternate universe. Anyhow, I'd suggest you join the gamers club now!`,
+    code: 'https://github.com/kens-visuals/game-zone',
+    liveSite: 'https://game-zone-kens-visuals.vercel.app/',
+    techStack: [
+      {
+        id: 1,
+        img: '/assets/logos/nextjs.png',
+      },
+      {
+        id: 2,
+        img: '/assets/logos/typescript.png',
+      },
+      {
+        id: 3,
+        img: '/assets/logos/tailwindcss.png',
+      },
+      {
+        id: 4,
+        img: '/assets/logos/react-query.png',
+      },
+      {
+        id: 5,
+        img: '/assets/logos/firebase.png',
+      },
+      {
+        id: 6,
+        img: '/assets/logos/framer-motion.png',
+      },
+    ],
+  },
+  {
     title: 'Markdown Notes PWA',
     screenshot: '/assets/markdown-notes-app-screenshot.png',
     description: `Simple markdown app that can be used to keep your notes safe and easy
@@ -51,25 +84,6 @@ export const projectsData: ProjectsDataTypes[] = [
       },
       {
         id: 3,
-        img: '/assets/logos/tailwindcss.png',
-      },
-    ],
-  },
-  {
-    title: 'Calculator PWA',
-    screenshot: '/assets/calculator-app-screenshot.png',
-    description: `Multi theme calulator that can be easily added to your phone or tablet 
-      to replace the boring calculators. Count your multi millions with themed calculator, or don't, 
-      it's your millions you should decide`,
-    code: 'https://github.com/kens-visuals/calculator-app',
-    liveSite: 'https://kens-visuals.github.io/calculator-app/',
-    techStack: [
-      {
-        id: 1,
-        img: '/assets/logos/react.png',
-      },
-      {
-        id: 2,
         img: '/assets/logos/tailwindcss.png',
       },
     ],
