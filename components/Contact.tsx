@@ -10,8 +10,7 @@ const buttonCustomHover = {
   ...buttonHover,
   y: -3,
   scale: 1,
-  color: '#1c1c1c',
-  borderColor: '#1c1c1c',
+  borderColor: '#FFD369',
 };
 
 export default function Contact() {
@@ -34,6 +33,7 @@ export default function Contact() {
 
         <motion.a
           whileHover={buttonCustomHover}
+          transition={{ duration: 0.3 }}
           href="mailto:karapet.nersisyan@yahoo.com"
           className="mt-8 block rounded-xl border border-transparent bg-js-yellow p-4 text-center text-heading-sm text-primary-dark"
         >
