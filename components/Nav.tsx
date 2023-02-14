@@ -47,7 +47,11 @@ export default function Nav() {
   };
 
   const menuItemsDisplay = menuItems.map(({ name, path }) => (
-    <motion.li variants={mobileNavItemsVariants} key={name}>
+    <motion.li
+      variants={mobileNavItemsVariants}
+      key={name}
+      className="transition-all duration-200 hover:text-js-yellow"
+    >
       <Link href={path} scroll={false}>
         {name}
       </Link>
