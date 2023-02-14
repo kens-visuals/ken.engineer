@@ -6,7 +6,7 @@ import Socials from './Socials';
 import Section from './Section';
 
 // Assets
-import profile from '../public/assets/profile.png';
+import profile from '../public/assets/profile-img.png';
 
 // Animations
 import { fadeIn, buttonHover } from '../utils/animations';
