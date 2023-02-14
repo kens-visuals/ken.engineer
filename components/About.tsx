@@ -6,7 +6,7 @@ import Socials from './Socials';
 import Section from './Section';
 
 // Assets
-import memoji from '../public/assets/memoji-notebook.png';
+import profile from '../public/assets/profile.png';
 
 // Animations
 import { fadeIn, buttonHover } from '../utils/animations';
@@ -76,8 +76,10 @@ export default function About() {
       >
         <Image
           alt="Ken Nersisyan"
-          src={memoji}
-          className="flex w-full max-w-md items-end justify-center rounded-full bg-shape bg-contain bg-center bg-no-repeat p-4"
+          height={250}
+          width={250}
+          src={profile}
+          className="flex w-full items-center justify-center rounded-full"
         />
 
         <motion.div
