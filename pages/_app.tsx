@@ -1,9 +1,9 @@
-import type { AppProps } from 'next/app';
-import '../styles/globals.css';
+import type { AppProps } from "next/app";
+import "../styles/globals.css";
 
 // Contexts
-import { ThemeProvider } from 'next-themes';
-import { ThemeToggleProvider } from '../contexts/ThemeContext';
+import { ThemeProvider } from "next-themes";
+import { ThemeToggleProvider } from "../contexts/ThemeContext";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

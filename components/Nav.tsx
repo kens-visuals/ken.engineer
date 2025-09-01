@@ -1,49 +1,39 @@
-import Link from 'next/link';
-import { useState } from 'react';
-import { motion, Variants, AnimatePresence } from 'framer-motion';
-
-// Components
-import ThemeToggler from './ThemeToggler';
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { motion, Variants, AnimatePresence } from "framer-motion";
+import ThemeToggler from "./ThemeToggler";
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const menuItems = [
-    { name: 'Skills', path: '/#skills' },
-    { name: 'Projects', path: '/#projects' },
-    { name: 'Articles', path: '/#articles' },
-    { name: 'Contact', path: '/#contact' },
+    { name: "Skills", path: "/#skills" },
+    { name: "Projects", path: "/#projects" },
+    // { name: 'Articles', path: '/#articles' },
+    { name: "Contact", path: "/#contact" },
   ];
 
   const navVariants: Variants = {
     hidden: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: { duration: 0.5 },
-    },
+    animate: { opacity: 1, transition: { duration: 0.5 } },
   };
 
   const mobileNavVariants: Variants = {
-    initial: { x: '-100%' },
+    initial: { x: "100%" },
     animate: {
       x: 0,
-      transition: { delayChildren: 0.4, staggerChildren: 0.1 },
+      transition: { type: "spring", stiffness: 300, damping: 30 },
     },
-    exit: {
-      x: '100%',
-      transition: {
-        delay: 1,
-        delayChildren: 0.2,
-        staggerChildren: 0.1,
-        staggerDirection: -1,
-      },
-    },
+    exit: { x: "100%", transition: { duration: 0.25 } },
   };
 
   const mobileNavItemsVariants: Variants = {
-    initial: { opacity: 0, x: -10 },
+    initial: { opacity: 0, x: 10 },
     animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -10 },
+    exit: { opacity: 0, x: 10 },
   };
 
   const menuItemsDisplay = menuItems.map(({ name, path }) => (
@@ -51,6 +41,7 @@ export default function Nav() {
       variants={mobileNavItemsVariants}
       key={name}
       className="transition-all duration-200 hover:text-js-yellow"
+      onClick={() => setIsMenuOpen(false)}
     >
       <Link href={path} scroll={false}>
         {name}
@@ -59,94 +50,93 @@ export default function Nav() {
   ));
 
   return (
-    <motion.nav
-      initial="hidden"
-      animate="animate"
-      variants={navVariants}
-      className="fixed top-0 left-1/2 z-50 flex w-full -translate-x-1/2 items-center justify-between rounded-b-lg bg-primary-light/70 pb-4 pt-6 backdrop-blur-lg dark:bg-primary-dark/30"
-    >
-      <div className="relative mx-auto flex w-[88%] max-w-5xl gap-4 font-inter md:static md:items-center">
-        <Link
-          className="mr-auto text-body uppercase text-primary-dark dark:text-primary-light"
-          href="/"
-        >
-          Ken.Engineer
-        </Link>
-
-        <button
-          type="button"
-          className="md:hidden"
-          onClick={() => setIsMenuOpen((prevMenuState) => !prevMenuState)}
-        >
-          <svg
-            width="40"
-            height="17"
-            viewBox="0 0 40 17"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+    <>
+      {/* NAV (keeps its translate and its own blur if you like) */}
+      <motion.nav
+        initial="hidden"
+        animate="animate"
+        variants={navVariants}
+        className="fixed top-0 left-1/2 z-50 flex w-full -translate-x-1/2 items-center justify-between rounded-b-lg bg-primary-light/70 pb-4 pt-6 backdrop-blur-lg dark:bg-primary-dark/30"
+      >
+        <div className="relative mx-auto flex w-[88%] max-w-5xl gap-4 font-inter md:static md:items-center">
+          <Link
+            className="mr-auto font-departure text-body uppercase text-primary-dark dark:text-primary-light"
+            href="/"
           >
-            <g id="Group">
+            Ken.Engineer
+          </Link>
+
+          <button
+            type="button"
+            className="md:hidden"
+            onClick={() => setIsMenuOpen((s) => !s)}
+            aria-label="Open menu"
+          >
+            {/* burger svg... */}
+            <svg
+              width="40"
+              height="17"
+              viewBox="0 0 40 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <rect
-                id="Rectangle"
                 width="40"
                 height="3"
-                className="fill-primary-dark dark:fill-primary-light "
+                className="fill-primary-dark dark:fill-primary-light"
               />
               <rect
-                id="Rectangle_2"
                 y="7"
                 width="40"
                 height="3"
-                className="fill-primary-dark dark:fill-primary-light "
+                className="fill-primary-dark dark:fill-primary-light"
               />
               <rect
-                id="Rectangle_3"
                 y="14"
                 width="40"
                 height="3"
-                className="fill-primary-dark dark:fill-primary-light "
+                className="fill-primary-dark dark:fill-primary-light"
               />
-              <rect
-                id="Rectangle_4"
-                width="40"
-                height="3"
-                className="fill-primary-dark dark:fill-primary-light "
-              />
-            </g>
-          </svg>
-        </button>
+            </svg>
+          </button>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.ul
-              key="nav"
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              variants={mobileNavVariants}
-              className="absolute top-14 right-0 z-10 flex w-full max-w-sm flex-col gap-4 rounded-md bg-primary-light/70 p-6 text-primary-dark backdrop-blur-lg dark:bg-primary-dark/30 dark:text-primary-light md:hidden"
-            >
-              {menuItemsDisplay}
-              <motion.li
-                variants={mobileNavItemsVariants}
-                key="themetoggle"
-                className="flex items-center"
+          {/* Desktop menu */}
+          <ul className="hidden w-full gap-4 p-4 pr-0 text-primary-dark dark:text-primary-light md:flex md:justify-end">
+            {menuItemsDisplay}
+            <li className="flex items-center">
+              <ThemeToggler />
+            </li>
+          </ul>
+        </div>
+      </motion.nav>
+
+      {mounted &&
+        createPortal(
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.ul
+                key="drawer"
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={mobileNavVariants}
+                className="fixed inset-x-4 top-20 z-[70] flex h-fit max-h-[calc(100vh-6rem)] flex-col gap-6 rounded-2xl border border-white/10 bg-primary-light/80 p-8 text-primary-dark shadow-2xl backdrop-blur-2xl dark:border-primary-light/10 dark:bg-primary-dark/80 dark:text-primary-light md:hidden"
+                role="dialog"
+                aria-modal="true"
               >
-                <ThemeToggler />
-              </motion.li>
-            </motion.ul>
-          )}
-        </AnimatePresence>
-
-        {/* Tablet and Desktop menu */}
-        <ul className="hidden w-full gap-4 p-4 pr-0 text-primary-dark dark:text-primary-light md:flex md:justify-end">
-          {menuItemsDisplay}
-          <li className="flex items-center">
-            <ThemeToggler />
-          </li>
-        </ul>
-      </div>
-    </motion.nav>
+                {menuItemsDisplay}
+                <motion.li
+                  variants={mobileNavItemsVariants}
+                  key="themetoggle"
+                  className="mt-2 flex items-center"
+                >
+                  <ThemeToggler />
+                </motion.li>
+              </motion.ul>
+            )}
+          </AnimatePresence>,
+          document.body,
+        )}
+    </>
   );
 }

@@ -1,4 +1,4 @@
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants } from "framer-motion";
 
 export default function Section({
   id,
@@ -8,7 +8,7 @@ export default function Section({
   children: JSX.Element[];
 }) {
   const sectionVariants: Variants = {
-    initial: { opacity: 0, x: '-10%' },
+    initial: { opacity: 0, x: "-10%" },
     animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
   };
 

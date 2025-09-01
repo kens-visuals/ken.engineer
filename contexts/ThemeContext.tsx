@@ -1,5 +1,5 @@
-import { useState, useEffect, createContext, useMemo } from 'react';
-import { useTheme } from 'next-themes';
+import { useState, useEffect, createContext, useMemo } from "react";
+import { useTheme } from "next-themes";
 
 // Interfaces
 interface ValuesTypes {
@@ -10,7 +10,7 @@ interface ValuesTypes {
 }
 
 export const ThemeContext = createContext<ValuesTypes>({
-  theme: '',
+  theme: "",
   setTheme: () => null,
   isChecked: false,
   setIsChecked: () => null,
@@ -23,18 +23,27 @@ export function ThemeToggleProvider({ children }: { children: JSX.Element }) {
 
   const value: ValuesTypes = useMemo(
     () => ({ theme, setTheme, isChecked, setIsChecked }),
-    [theme]
+    [theme, isChecked, setIsChecked],
   );
 
   useEffect(() => {
     setMounted(true);
 
-    if (systemTheme === 'dark') {
-      setTheme('dark');
+    if (systemTheme === "dark") {
+      setTheme("dark");
     } else {
-      setTheme('light');
+      setTheme("light");
     }
-  }, [systemTheme]);
+  }, [systemTheme, setTheme]);
+
+  // Sync isChecked with theme
+  useEffect(() => {
+    if (theme === "dark") {
+      setIsChecked(true);
+    } else {
+      setIsChecked(false);
+    }
+  }, [theme, setIsChecked]);
 
   if (!mounted) return null;
 

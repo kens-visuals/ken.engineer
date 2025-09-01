@@ -1,24 +1,21 @@
-import { useContext } from 'react';
-import { motion } from 'framer-motion';
+import { useContext } from "react";
+import { motion } from "framer-motion";
 
-// Contexts
-import { ThemeContext } from '../contexts/ThemeContext';
+import { ThemeContext } from "../contexts/ThemeContext";
 
 export default function ThemeToggler() {
-  const { theme, setTheme, isChecked, setIsChecked } = useContext(ThemeContext);
+  const { theme, setTheme, isChecked } = useContext(ThemeContext);
 
   const handleCheckedChange = () => {
-    if (theme === 'dark') {
-      setTheme('light');
-      setIsChecked(true);
+    if (theme === "dark") {
+      setTheme("light");
     } else {
-      setTheme('dark');
-      setIsChecked(false);
+      setTheme("dark");
     }
   };
 
   const spring = {
-    type: 'spring',
+    type: "spring",
     stiffness: 500,
     damping: 20,
   };
@@ -30,20 +27,20 @@ export default function ThemeToggler() {
     >
       <input
         type="checkbox"
-        value={`${isChecked}`} // turns string to boolean
-        checked={isChecked}
-        onChange={handleCheckedChange}
         id="default-toggle"
+        checked={isChecked}
         className="peer sr-only"
+        value={isChecked.toString()}
+        onChange={handleCheckedChange}
       />
       <div
         data-checked={isChecked}
-        className="flex h-6 w-11 items-center justify-start rounded-full bg-primary-dark p-0.5 focus:ring-4 focus:ring-js-yellow peer-focus:ring-4 peer-focus:ring-js-yellow data-[checked='true']:justify-end dark:bg-primary-light"
+        className="flex h-6 w-11 items-center justify-start rounded-full bg-primary-dark p-0.5 data-[checked='true']:justify-end dark:bg-primary-light"
       >
         <motion.span
           layout
           transition={spring}
-          className="inline-block h-5 w-5 rounded-full border border-primary-light bg-js-yellow  dark:border-primary-dark"
+          className="inline-block h-5 w-5 rounded-full border border-primary-light bg-js-yellow dark:border-primary-dark"
         />
       </div>
     </label>

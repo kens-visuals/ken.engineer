@@ -1,42 +1,42 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 // Assets
-import certificate from '../public/assets/meta-front-end-developer-certificate.png';
+import certificate from "../public/assets/meta-front-end-developer-certificate.png";
 
 export default function Footer() {
   const socials = [
     {
-      name: 'GitHub',
-      link: 'https://github.com/kens-visuals',
+      name: "GitHub",
+      link: "https://github.com/kens-visuals",
     },
     {
-      name: 'LinkedIn',
-      link: 'https://www.linkedin.com/in/karo-nersisyan-135118129/',
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/karo-nersisyan-135118129/",
     },
     {
-      name: 'Medium',
-      link: 'https://medium.com/@kens_visuals',
+      name: "Medium",
+      link: "https://medium.com/@kens_visuals",
     },
     {
-      name: 'Twitter',
-      link: 'https://twitter.com/kens_visuals',
+      name: "Twitter",
+      link: "https://twitter.com/kens_visuals",
     },
     {
-      name: 'Discord',
-      link: 'https://discordapp.com/users/kens_visuals#0900',
+      name: "Discord",
+      link: "https://discordapp.com/users/kens_visuals#0900",
     },
     {
-      name: 'Resume',
-      link: 'https://s3.amazonaws.com/attachments.angel.co/8010617-6ea3740bb6b12fe760724963bb192d48.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJS6W3HGZGRJIRBTA%2F20230213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230213T231845Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=afed19c8bc4df1fc5c5b7b425e514ef32f86de9f9d84cbf67c8ece944fdb3445',
+      name: "Resume",
+      link: "https://s3.amazonaws.com/attachments.angel.co/8010617-6ea3740bb6b12fe760724963bb192d48.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJS6W3HGZGRJIRBTA%2F20230213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230213T231845Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=afed19c8bc4df1fc5c5b7b425e514ef32f86de9f9d84cbf67c8ece944fdb3445",
     },
   ];
 
   const menuItems = [
-    { name: 'Skills', path: '/#skills' },
-    { name: 'Projects', path: '/#projects' },
-    { name: 'Articles', path: '/#articles' },
-    { name: 'Contact', path: '/#contact' },
+    { name: "Skills", path: "/#skills" },
+    { name: "Projects", path: "/#projects" },
+    { name: "Articles", path: "/#articles" },
+    { name: "Contact", path: "/#contact" },
   ];
 
   const menuItemsDisplay = menuItems.map(({ name, path }) => (
@@ -79,7 +79,7 @@ export default function Footer() {
 
       <div className="flex items-center justify-center">
         <span>
-          Designed and Coded by{' '}
+          Designed and Developed by{" "}
           <a
             target="_blank"
             rel="noopener noreferrer"

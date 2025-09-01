@@ -1,14 +1,14 @@
-import { motion, Variants } from 'framer-motion';
-import { nanoid } from 'nanoid';
+import { motion, Variants } from "framer-motion";
+import { nanoid } from "nanoid";
 
 // Hooks
-import useMediaQuery from '../hooks/useMediaQuery';
+import useMediaQuery from "../hooks/useMediaQuery";
 
 // Components
-import Section from './Section';
+import Section from "./Section";
 
 // Animations
-import { buttonHover, fadeIn } from '../utils/animations';
+import { buttonHover, fadeIn } from "../utils/animations";
 
 interface PostsTypes {
   items: [
@@ -17,18 +17,18 @@ interface PostsTypes {
       pubDate: string;
       link: string;
       thumbnail: string;
-    }
+    },
   ];
 }
 
 function convertDate(date: string) {
-  const [year, month, day] = date.slice(0, 10).split('-');
+  const [year, month, day] = date.slice(0, 10).split("-");
 
   return `Published: ${month}/${day}/${year}`;
 }
 
 export default function Articles({ posts }: { posts: PostsTypes }) {
-  const matches = useMediaQuery('(min-width: 768px)');
+  const matches = useMediaQuery("(min-width: 768px)");
 
   const { items: articles } = posts;
 
@@ -83,7 +83,7 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
         >
           {title}
         </a>
-        <span className="text-xs text-accent-grey-dark dark:text-accent-grey-light ">
+        <span className="text-xs text-accent-grey-dark dark:text-accent-grey-light">
           {convertDate(pubDate)}
         </span>
       </motion.li>
@@ -101,7 +101,7 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
           initial="initial"
           whileInView="animate"
           variants={articlesVariants}
-          viewport={{ once: true, amount: 'some' }}
+          viewport={{ once: true, amount: "some" }}
           className="relative rounded-xl lg:col-span-2"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -117,7 +117,7 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
             initial="initial"
             whileInView="animate"
             variants={backdropVariant}
-            viewport={{ once: true, amount: 'all' }}
+            viewport={{ once: true, amount: "all" }}
             className="absolute inset-0 z-10 h-full w-full rounded-lg p-6 backdrop-blur-none md:flex md:items-end md:bg-primary-dark/50"
           >
             <motion.article
@@ -199,8 +199,8 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
           initial="initial"
           whileInView="animate"
           variants={articlesVariants}
-          viewport={{ amount: 'some' }}
-          className="mt-6 grid-cols-3  space-y-10 divide-y divide-js-yellow lg:grid lg:gap-6 lg:space-y-0 lg:divide-y-0 lg:divide-x"
+          viewport={{ amount: "some" }}
+          className="mt-6 grid-cols-3 space-y-10 divide-y divide-js-yellow lg:grid lg:gap-6 lg:space-y-0 lg:divide-y-0 lg:divide-x"
         >
           {articlesDisplay}
         </motion.ul>
@@ -208,7 +208,7 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
 
       <div className="rounded-lg bg-main-tools-pattern p-6">
         <span className="text-heading-sm font-normal text-primary-dark dark:text-primary-light">
-          Did you like my articles? Then the{' '}
+          Did you like my articles? Then the{" "}
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -216,7 +216,7 @@ export default function Articles({ posts }: { posts: PostsTypes }) {
             className="animate-pulse border-b-2 border-b-teal-700 bg-teal-900 bg-clip-text font-bold text-transparent hover:text-primary-dark dark:bg-main-tools-pattern--text hover:dark:text-primary-light"
           >
             subscription button
-          </a>{' '}
+          </a>{" "}
           is waiting for you
         </span>
       </div>

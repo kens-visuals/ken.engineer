@@ -6,7 +6,7 @@ interface SkillsTitleProps {
 export default function SkillsTitle({ title, bgPattern }: SkillsTitleProps) {
   return (
     <span
-      className={`bg-primary-dark bg-clip-text px-4 py-3 text-transparent dark:bg-primary-light/30 ${bgPattern}`}
+      className={`bg-clip-text px-4 py-3 font-semibold tracking-wide text-transparent ${bgPattern}`}
     >
       {title}
     </span>
