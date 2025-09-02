@@ -1,28 +1,29 @@
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import { ReactNode, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import Link from "next/link";
 import { motion, Variants, AnimatePresence } from "framer-motion";
 
-const menuItems = [
-  { name: "Skills", path: "/#skills" },
-  { name: "Projects", path: "/#projects" },
-  { name: "Contact", path: "/#contact" },
-  {
-    name: "Resume",
-    path: "/resume.pdf",
-    icon: (
-      <svg
-        id="external-link"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
+import { menuItems, siteConfig } from "../utils/config";
+import { navIcons } from "../utils/icons";
+
+type MenuItem = {
+  name: string;
+  path: string;
+  icon?: ReactNode;
+};
+
+// Add external link icon to resume menu item
+const menuItemsWithIcons: MenuItem[] = menuItems.map((item) => ({
+  ...item,
+  icon:
+    item.name === "Resume" ? (
+      <navIcons.externalLink
         className="h-4 w-4 fill-primary-light"
-      >
-        <polygon points="20 15 20 22 19 22 19 23 2 23 2 22 1 22 1 5 2 5 2 4 11 4 11 6 3 6 3 21 18 21 18 15 20 15" />
-        <polygon points="23 1 23 9 21 9 21 5 20 5 20 6 19 6 19 7 18 7 18 8 17 8 17 9 16 9 16 10 15 10 15 11 14 11 14 12 13 12 13 13 12 13 12 14 11 14 11 15 10 15 10 16 9 16 9 17 7 17 7 15 8 15 8 14 9 14 9 13 10 13 10 12 11 12 11 11 12 11 12 10 13 10 13 9 14 9 14 8 15 8 15 7 16 7 16 6 17 6 17 5 18 5 18 4 19 4 19 3 15 3 15 1 23 1" />
-      </svg>
-    ),
-  },
-];
+        size={16}
+        ariaHidden
+      />
+    ) : undefined,
+}));
 
 const navVariants: Variants = {
   hidden: { opacity: 0 },
@@ -50,7 +51,7 @@ export default function Nav() {
 
   useEffect(() => setMounted(true), []);
 
-  const menuItemsDisplay = menuItems.map(({ name, path, icon }) => (
+  const menuItemsDisplay = menuItemsWithIcons.map(({ name, path, icon }) => (
     <motion.li
       key={name}
       variants={mobileNavItemsVariants}
@@ -60,7 +61,6 @@ export default function Nav() {
       <Link href={path} scroll={false} className="flex items-center gap-2">
         {name}
         <span className="group-hover/menu-item:text-js-yellow">{icon}</span>
-        {/* {icon} */}
       </Link>
     </motion.li>
   ));
@@ -78,7 +78,7 @@ export default function Nav() {
             href="/"
             className="font-departure text-sm uppercase sm:text-body"
           >
-            Ken.Engineer
+            {siteConfig.navigation.brand}
           </Link>
 
           <button
@@ -87,16 +87,11 @@ export default function Nav() {
             aria-label="Open menu"
             onClick={() => setIsMenuOpen((s) => !s)}
           >
-            <svg
-              id="bars"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
+            <navIcons.hamburger
               className="h-6 w-6 fill-primary-light"
-            >
-              <rect x="1" y="11" width="22" height="2" />
-              <rect x="1" y="19" width="22" height="2" />
-              <rect x="1" y="3" width="22" height="2" />
-            </svg>
+              size={24}
+              ariaHidden
+            />
           </button>
 
           <ul className="hidden w-full gap-4 p-4 pr-0 text-primary-light md:flex md:justify-end">

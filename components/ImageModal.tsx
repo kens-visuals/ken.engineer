@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
+import { navIcons } from "../utils/icons";
+
 interface ImageModalProps {
   isOpen: boolean;
   imageSrc: string;
@@ -129,15 +131,11 @@ export default function ImageModal({
               aria-label="Close image"
               className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-sm transition-all duration-200 hover:scale-110 hover:bg-black/80 focus:outline-none"
             >
-              <svg
-                id="window-close"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+              <navIcons.close
                 className="h-6 w-6 fill-primary-light"
-              >
-                <path d="m22,2v-1H2v1h-1v20h1v1h20v-1h1V2h-1Zm-1,19H3V3h18v18Z" />
-                <polygon points="15 13 16 13 16 14 17 14 17 15 18 15 18 16 17 16 17 17 16 17 16 18 15 18 15 17 14 17 14 16 13 16 13 15 11 15 11 16 10 16 10 17 9 17 9 18 8 18 8 17 7 17 7 16 6 16 6 15 7 15 7 14 8 14 8 13 9 13 9 11 8 11 8 10 7 10 7 9 6 9 6 8 7 8 7 7 8 7 8 6 9 6 9 7 10 7 10 8 11 8 11 9 13 9 13 8 14 8 14 7 15 7 15 6 16 6 16 7 17 7 17 8 18 8 18 9 17 9 17 10 16 10 16 11 15 11 15 13" />
-              </svg>
+                size={24}
+                ariaHidden
+              />
             </button>
           </motion.div>
         </motion.div>

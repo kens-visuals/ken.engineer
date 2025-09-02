@@ -7,6 +7,7 @@ import TextScramble from "./TextScramble";
 
 import { container } from "../utils/animations";
 import { ProjectsDataTypes } from "../utils/projectsData";
+import { actionIcons } from "../utils/icons";
 
 const cardVariants: Variants = {
   initial: { opacity: 0, scale: 0.95 },
@@ -137,15 +138,11 @@ export default function ProjectCardV4({
                 onClick={() => setIsImageModalOpen(true)}
                 className="relative inline-flex flex-1 items-center justify-center gap-3 rounded-2xl border-2 border-js-yellow/30 bg-transparent py-4 px-6 text-center text-body font-semibold tracking-wider text-js-yellow transition-all duration-300 hover:border-js-yellow hover:bg-js-yellow hover:text-primary-dark hover:shadow-2xl hover:shadow-js-yellow/25"
               >
-                <svg
-                  id="image"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
+                <actionIcons.image
                   className="h-5 w-5 fill-current"
-                >
-                  <polygon points="9 6 9 9 8 9 8 10 5 10 5 9 4 9 4 6 5 6 5 5 8 5 8 6 9 6" />
-                  <path d="m22,2v-1H2v1h-1v20h1v1h20v-1h1V2h-1Zm-5,12v1h1v1h1v1h1v1h1v3h-13v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v1h1Zm3,1v-1h-1v-1h-1v-1h-1v-1h-1v-1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v-1h-1v-1h-1v-1h-1v-1h-1V3h18v12h-1Zm-15,3v1h1v1h1v1H3v-4h1v1h1Z" />
-                </svg>
+                  size={20}
+                  ariaHidden
+                />
                 View Screenshot
               </motion.button>
               <motion.a
@@ -156,15 +153,11 @@ export default function ProjectCardV4({
                 whileTap={{ scale: 0.98 }}
                 className="relative inline-flex flex-1 items-center justify-center gap-3 rounded-2xl border-2 border-js-yellow/30 bg-transparent py-4 px-6 text-center text-body font-semibold tracking-wider text-js-yellow transition-all duration-300 hover:border-js-yellow hover:bg-js-yellow hover:text-primary-dark hover:shadow-2xl hover:shadow-js-yellow/25"
               >
-                <svg
-                  aria-hidden
-                  viewBox="0 0 24 24"
+                <actionIcons.code
                   className="h-5 w-5 fill-current"
-                >
-                  <polygon points="15 4 16 4 16 6 15 6 15 9 14 9 14 12 13 12 13 14 12 14 12 17 11 17 11 20 10 20 10 21 9 21 9 20 8 20 8 18 9 18 9 15 10 15 10 12 11 12 11 10 12 10 12 7 13 7 13 4 14 4 14 3 15 3 15 4" />
-                  <polygon points="23 11 23 13 22 13 22 14 21 14 21 15 20 15 20 16 19 16 19 17 17 17 17 15 18 15 18 14 19 14 19 13 20 13 20 11 19 11 19 10 18 10 18 9 17 9 17 7 19 7 19 8 20 8 20 9 21 9 21 10 22 10 22 11 23 11" />
-                  <polygon points="7 7 7 9 6 9 6 10 5 10 5 11 4 11 4 13 5 13 5 14 6 14 6 15 7 15 7 17 5 17 5 16 4 16 4 15 3 15 3 14 2 14 2 13 1 13 1 11 2 11 2 10 3 10 3 9 4 9 4 8 5 8 5 7 7 7" />
-                </svg>
+                  size={20}
+                  ariaHidden
+                />
                 Source Code
               </motion.a>
 
@@ -176,13 +169,11 @@ export default function ProjectCardV4({
                 whileTap={{ scale: 0.98 }}
                 className="relative inline-flex flex-1 items-center justify-center gap-3 rounded-2xl border border-transparent bg-js-yellow py-4 px-6 text-center text-body font-semibold tracking-wider text-primary-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-js-yellow/25"
               >
-                <svg
-                  aria-hidden
-                  viewBox="0 0 24 24"
+                <actionIcons.live
                   className="h-5 w-5 fill-current"
-                >
-                  <path d="m22,9v-2h-1v-2h-1v-1h-1v-1h-2v-1h-2v-1h-6v1h-2v1h-2v1h-1v1h-1v2h-1v2h-1v7h1v1h1v2h1v1h1v1h2v1h2v1h6v-1h2v-1h2v-1h1v-1h1v-2h1v-2h1v-6h-1Zm-1,1v4h-3v-4h3Zm-5-6h1v1h2v2h1v1h-3v-3h-1v-1Zm-2,14v2h-1v1h-2v-1h-1v-2h-1v-2h6v2h-1Zm2-8v4h-8v-4h8Zm-7-4h1v-2h1v-1h2v1h1v2h1v2h-6v-2Zm-5,1h1v-2h2v-1h1v1h-1v3h-3v-1Zm-1,7v-4h3v4h-3Zm2,5v-2h-1v-1h3v3h1v1h-1v-1h-2Zm14-2v2h-2v1h-1v-1h1v-3h3v1h-1Z" />
-                </svg>
+                  size={20}
+                  ariaHidden
+                />
                 Live Demo
               </motion.a>
             </motion.div>

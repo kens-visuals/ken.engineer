@@ -5,6 +5,8 @@ import TextScramble from "./TextScramble";
 import GridSweepSegmentFM from "./GridSweepFM";
 
 import { container } from "../utils/animations";
+import { contactInfo } from "../utils/config";
+import { actionIcons } from "../utils/icons";
 
 const cardVariants: Variants = {
   initial: { opacity: 0, scale: 0.95 },
@@ -89,15 +91,11 @@ export default function Contact() {
           >
             <div className="flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-js-yellow/30 bg-js-yellow/20 backdrop-blur-sm">
-                <svg
-                  id="envelope-solid"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
+                <actionIcons.email
                   className="h-6 w-6 fill-current text-js-yellow"
-                >
-                  <polygon points="21 4 21 5 20 5 20 6 19 6 19 7 18 7 18 8 17 8 17 9 16 9 16 10 15 10 15 11 14 11 14 12 13 12 13 13 11 13 11 12 10 12 10 11 9 11 9 10 8 10 8 9 7 9 7 8 6 8 6 7 5 7 5 6 4 6 4 5 3 5 3 4 21 4" />
-                  <polygon points="23 5 23 19 22 19 22 20 2 20 2 19 1 19 1 5 3 5 3 6 4 6 4 7 5 7 5 8 6 8 6 9 7 9 7 10 8 10 8 11 9 11 9 12 10 12 10 13 11 13 11 14 13 14 13 13 14 13 14 12 15 12 15 11 16 11 16 10 17 10 17 9 18 9 18 8 19 8 19 7 20 7 20 6 21 6 21 5 23 5" />
-                </svg>
+                  size={24}
+                  ariaHidden
+                />
               </div>
               <div>
                 <h4 className="text-xl font-bold text-primary-light">
@@ -113,7 +111,7 @@ export default function Contact() {
               <div className="flex items-center gap-2 rounded-full border border-js-yellow/30 bg-js-yellow/20 px-3 py-1.5">
                 <div className="h-2 w-2 animate-pulse rounded-full bg-js-yellow" />
                 <span className="text-sm font-medium text-js-yellow">
-                  Available for new projects
+                  {contactInfo.availability}
                 </span>
               </div>
             </div>
@@ -139,39 +137,32 @@ export default function Contact() {
           >
             <div className="flex flex-col gap-3 lg:flex-row">
               <motion.a
-                href="mailto:karapet.nersisyan@yahoo.com"
                 whileHover={buttonHover}
                 whileTap={{ scale: 0.98 }}
+                href={`mailto:${contactInfo.email}`}
                 className="relative inline-flex flex-1 items-center justify-center gap-3 rounded-2xl border border-transparent bg-js-yellow py-4 px-6 text-center text-body font-semibold tracking-wider text-primary-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-js-yellow/25"
               >
-                {/* email icon */}
-                <svg
-                  id="envelope"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
+                <actionIcons.email
                   className="h-5 w-5 fill-current"
-                >
-                  <path d="m21,5v-1H3v1H1v14h1v1h20v-1h1V5h-2Zm-11,7v-1h-1v-1h-1v-1h-1v-1h-1v-1h-1v-1h14v1h-1v1h-1v1h-1v1h-1v1h-1v1h-1v1h-2v-1h-1Zm-6-5v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h2v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v11H3V7h1Z" />
-                </svg>
+                  size={20}
+                  ariaHidden
+                />
                 Send Email
               </motion.a>
 
               <motion.a
-                href="https://linkedin.com/in/karapet-nersisyan"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.02, y: -2 }}
+                href={contactInfo.linkedin}
                 className="relative inline-flex flex-1 items-center justify-center gap-3 rounded-2xl border-2 border-js-yellow/30 bg-transparent py-4 px-6 text-center text-body font-semibold tracking-wider text-js-yellow transition-all duration-300 hover:border-js-yellow hover:bg-js-yellow hover:text-primary-dark hover:shadow-2xl hover:shadow-js-yellow/25"
               >
-                {/* linkedin icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
+                <actionIcons.email
                   className="h-5 w-5 fill-current"
-                >
-                  <path d="M4 3h4v4H4zM4 9h4v12H4zM10 9h4v2h.1c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.4 3 5.4 6.9V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4V9z" />
-                </svg>
+                  size={20}
+                  ariaHidden
+                />
                 LinkedIn
               </motion.a>
             </div>

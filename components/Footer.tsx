@@ -1,47 +1,40 @@
+import { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import certificate from "../public/assets/meta-front-end-developer-certificate.png";
+import { socials, menuItems, siteConfig, socialLinks } from "../utils/config";
+import { navIcons } from "../utils/icons";
+
+type MenuItem = {
+  name: string;
+  path: string;
+  icon?: ReactNode;
+};
+
+// Add external link icon to resume menu item
+const menuItemsWithIcons: MenuItem[] = menuItems.map((item) => ({
+  ...item,
+  icon:
+    item.name === "Resume" ? (
+      <navIcons.externalLink
+        className="h-4 w-4 fill-primary-light transition-colors duration-200 group-hover/menu-item:fill-js-yellow"
+        size={16}
+        ariaHidden
+      />
+    ) : undefined,
+}));
 
 export default function Footer() {
-  const socials = [
-    {
-      name: "GitHub",
-      link: "https://github.com/kens-visuals",
-    },
-    {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/karo-nersisyan-135118129/",
-    },
-    {
-      name: "Medium",
-      link: "https://medium.com/@kens_visuals",
-    },
-    {
-      name: "Discord",
-      link: "https://discordapp.com/users/kens_visuals#0900",
-    },
-    {
-      name: "Resume",
-      link: "/resume.pdf",
-    },
-  ];
-
-  const menuItems = [
-    { name: "Skills", path: "/#skills" },
-    { name: "Projects", path: "/#projects" },
-    { name: "Articles", path: "/#articles" },
-    { name: "Contact", path: "/#contact" },
-  ];
-
-  const menuItemsDisplay = menuItems.map(({ name, path }) => (
+  const menuItemsDisplay = menuItemsWithIcons.map(({ name, path, icon }) => (
     <li key={name}>
       <Link
         href={path}
         scroll={false}
-        className="text-primary-light transition-all duration-300 hover:text-js-yellow"
+        className="group/menu-item flex items-center gap-2 text-primary-light transition-all duration-300 hover:text-js-yellow"
       >
         {name}
+        {icon}
       </Link>
     </li>
   ));
@@ -70,7 +63,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           className="w-full grayscale filter transition-all duration-300 hover:grayscale-0"
-          href="https://www.credly.com/badges/46c47d7c-d818-4d7f-b808-5d04ad3053b9/public_url"
+          href={siteConfig.externalLinks.credly}
         >
           <Image
             width={100}
@@ -83,14 +76,14 @@ export default function Footer() {
 
       <div className="flex items-center justify-center pt-24 text-accent-grey-dark">
         <span>
-          Designed and Developed by{" "}
+          {siteConfig.footer.copyright}{" "}
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/kens-visuals"
+            href={socialLinks.github}
             className="text-js-yellow underline underline-offset-4"
           >
-            Ken Nersisyan
+            {siteConfig.name}
           </a>
         </span>
       </div>

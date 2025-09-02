@@ -6,12 +6,13 @@ import About from "../components/About";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import { siteConfig } from "../utils/config";
 
 export default function Home() {
   return (
     <div className="bg-primary relative min-h-screen overflow-x-hidden bg-primary-dark font-departure">
       <Head>
-        <title>Ken&apos;s Portfolio</title>
+        <title>{siteConfig.title}</title>
       </Head>
 
       <Container>
