@@ -12,7 +12,7 @@ import { container } from "../utils/animations";
 export default function Skills() {
   return (
     <Section id="skills">
-      <h2 className="text-6xl text-heading-lg leading-tight text-primary-dark dark:text-primary-light">
+      <h2 className="text-5xl text-primary-light md:text-heading-lg">
         <motion.div
           initial="hidden"
           variants={container}

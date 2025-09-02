@@ -29,9 +29,20 @@ const buttonVariant: Variants = {
 
 export default function About() {
   return (
-    <Section id="about">
-      <h2 className="text-heading-lg md:text-8xl">
-        Hi, I’m{" "}
+    <Section id="about" style={{ marginTop: "5rem" }}>
+      <h2 className="text-7xl text-primary-light md:text-8xl">
+        <motion.div
+          initial="hidden"
+          variants={container}
+          whileInView="visible"
+          viewport={{ once: true, amount: "all" }}
+          className="lg:inline-flex lg:whitespace-nowrap"
+        >
+          <TextScramble
+            text="Hi, I'm"
+            style={{ color: "var(--color-primary-light)" }}
+          />
+        </motion.div>{" "}
         <motion.div
           initial="hidden"
           variants={container}
@@ -41,7 +52,6 @@ export default function About() {
         >
           <TextScramble
             text="Ken"
-            speed={14}
             triggerInitiallyAndOnHover
             style={{ color: "var(--color-js-yellow)" }}
           />
@@ -68,15 +78,15 @@ export default function About() {
 
         <motion.div
           initial="initial"
-          whileInView="animate"
           variants={fadeIn}
+          whileInView="animate"
           viewport={{ once: true, amount: 0.3 }}
-          className="w-full"
+          className="w-full text-primary-light"
         >
           <h3 className="text-heading-sm lg:text-heading-md">
             ...and I&apos;d love to bring your next project to life
           </h3>
-          <p className="mt-4 mb-8 text-sm text-accent-grey-light dark:text-accent-grey-dark lg:text-body">
+          <p className="mt-4 mb-8 text-sm text-accent-grey-dark lg:text-body">
             With over 5 years of experience crafting exceptional front-end
             experiences, I&apos;m passionate about turning innovative ideas into
             reality. I&apos;m a front-end developer who&apos;s deeply passionate
@@ -134,7 +144,6 @@ export default function About() {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 className="h-6 w-6 fill-primary-dark"
-                // style={{ fill: colorScheme.text }}
               >
                 <path d="M23.5049 7.5012V9.50166H22.5047V10.5019H21.5045V9.50166H20.5043V8.50143H19.504V7.5012H20.5043V6.50098H22.5047V7.5012H23.5049Z" />
                 <path d="M21.5046 10.5019V11.5021H20.5044V12.5024H19.5041V13.5026H18.5039V14.5028H17.5037V15.5031H16.5035V16.5033H15.5032V17.5035H14.503V18.5037H11.5023V15.5031H12.5025V14.5028H13.5028V13.5026H14.503V12.5024H15.5032V11.5021H16.5035V10.5019H17.5037V9.50169H18.5039V8.50146H19.5041V9.50169H20.5044V10.5019H21.5046Z" />

@@ -3,6 +3,7 @@ import { motion, Variants } from "framer-motion";
 interface SectionProps {
   id: string;
   children: JSX.Element[];
+  style?: React.CSSProperties;
 }
 
 const sectionVariants: Variants = {
@@ -10,10 +11,11 @@ const sectionVariants: Variants = {
   animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
 };
 
-export default function Section({ id, children }: SectionProps) {
+export default function Section({ id, children, style }: SectionProps) {
   return (
     <motion.section
       id={id}
+      style={style}
       initial="initial"
       whileInView="animate"
       variants={sectionVariants}

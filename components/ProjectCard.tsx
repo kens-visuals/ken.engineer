@@ -66,7 +66,7 @@ export default function ProjectCardV4({
                   variants={container}
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.3 }}
-                  className="text-3xl font-bold leading-tight text-primary-dark dark:text-primary-light lg:text-4xl"
+                  className="text-3xl font-bold leading-tight text-primary-light lg:text-4xl"
                 >
                   <TextScramble
                     speed={14}
@@ -88,7 +88,7 @@ export default function ProjectCardV4({
               <motion.p
                 custom={2}
                 variants={staggerVariants}
-                className="text-lg leading-relaxed text-accent-grey-light dark:text-accent-grey-dark"
+                className="text-lg leading-relaxed text-accent-grey-dark"
               >
                 {description}
               </motion.p>
@@ -98,7 +98,7 @@ export default function ProjectCardV4({
                 variants={staggerVariants}
                 className="flex flex-col gap-2"
               >
-                <h4 className="text-sm font-semibold uppercase tracking-wider text-primary-dark dark:text-primary-light">
+                <h4 className="text-sm font-semibold uppercase tracking-wider text-primary-light">
                   Technology Stack
                 </h4>
                 <div className="flex flex-wrap gap-1">
@@ -110,7 +110,7 @@ export default function ProjectCardV4({
                       transition={{ delay: 0.4 + index * 0.05 }}
                       className="group/tech"
                     >
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary-light/20 bg-primary-light/90 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-js-yellow/30 hover:shadow-xl hover:shadow-js-yellow/20 dark:bg-primary-dark">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary-dark/20 bg-primary-dark/90 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-js-yellow/30 hover:shadow-xl hover:shadow-js-yellow/20">
                         <Image
                           src={img}
                           alt="tech logo"

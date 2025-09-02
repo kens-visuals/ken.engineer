@@ -1,8 +1,8 @@
 import { motion, Variants } from "framer-motion";
 
 import Section from "./Section";
-import GridSweepSegmentFM from "./GridSweepFM";
 import TextScramble from "./TextScramble";
+import GridSweepSegmentFM from "./GridSweepFM";
 
 import { container } from "../utils/animations";
 
@@ -42,16 +42,14 @@ export default function Contact() {
         variants={container}
         whileInView="visible"
         viewport={{ once: false, amount: "some" }}
-        className="text-heading-lg text-primary-dark dark:text-primary-light"
+        className="text-5xl md:text-heading-lg lg:inline-flex lg:whitespace-nowrap"
       >
-        <div className="inline-flex whitespace-nowrap">
-          <TextScramble
-            speed={14}
-            text="Contact me"
-            triggerInitiallyAndOnHover
-            style={{ color: "var(--color-js-yellow)" }}
-          />
-        </div>
+        <TextScramble
+          speed={14}
+          text="Contact me"
+          triggerInitiallyAndOnHover
+          style={{ color: "var(--color-js-yellow)" }}
+        />
       </motion.h3>
 
       <motion.div
@@ -66,6 +64,8 @@ export default function Contact() {
 
         {/* Static grid (under) */}
         <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:20px_20px]" />
+
+        <div className="absolute inset-0 z-0 bg-black/40" />
 
         <GridSweepSegmentFM
           cell={20}
@@ -100,10 +100,10 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <h4 className="text-xl font-bold text-primary-dark dark:text-primary-light">
+                <h4 className="text-xl font-bold text-primary-light">
                   Let&apos;s Connect
                 </h4>
-                <p className="text-sm text-accent-grey-light dark:text-accent-grey-dark">
+                <p className="text-sm text-accent-grey-dark">
                   Ready to bring your vision to life
                 </p>
               </div>
@@ -124,7 +124,7 @@ export default function Contact() {
             variants={staggerVariants}
             className="flex flex-col gap-4"
           >
-            <p className="text-lg leading-relaxed text-accent-grey-light dark:text-accent-grey-dark">
+            <p className="text-lg leading-relaxed text-accent-grey-dark">
               I&apos;d love to have a conversation about how I can help bring
               your vision to life. The best first step is for us to discuss your
               project requirements and goals. Then we can create a plan to move

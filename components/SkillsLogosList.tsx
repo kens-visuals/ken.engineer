@@ -21,8 +21,8 @@ const itemVariants: Variants = {
 };
 
 export default function SkillsLogosList({ logosArr }: SkillsLogosListProps) {
-  const wrapperRef = useRef<HTMLDivElement | null>(null);
   const gridRef = useRef<HTMLUListElement | null>(null);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   const [scale, setScale] = useState(1);
 

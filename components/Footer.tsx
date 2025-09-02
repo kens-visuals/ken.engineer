@@ -18,16 +18,12 @@ export default function Footer() {
       link: "https://medium.com/@kens_visuals",
     },
     {
-      name: "Twitter",
-      link: "https://twitter.com/kens_visuals",
-    },
-    {
       name: "Discord",
       link: "https://discordapp.com/users/kens_visuals#0900",
     },
     {
       name: "Resume",
-      link: "https://s3.amazonaws.com/attachments.angel.co/8010617-6ea3740bb6b12fe760724963bb192d48.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJS6W3HGZGRJIRBTA%2F20230213%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230213T231845Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=afed19c8bc4df1fc5c5b7b425e514ef32f86de9f9d84cbf67c8ece944fdb3445",
+      link: "/resume.pdf",
     },
   ];
 
@@ -64,8 +60,8 @@ export default function Footer() {
   ));
 
   return (
-    <footer className="border-t border-t-primary-dark pt-6 dark:border-t-primary-light">
-      <div className="my-8 grid gap-4 md:grid-cols-3 lg:max-w-3xl">
+    <footer className="border-t border-t-primary-dark pt-6">
+      <div className="my-8 grid gap-16 md:grid-cols-3 lg:max-w-3xl lg:gap-4">
         <ul className="space-y-2">{menuItemsDisplay}</ul>
 
         <ul className="space-y-2">{socialsDisplay}</ul>
@@ -85,7 +81,7 @@ export default function Footer() {
         </a>
       </div>
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center pt-24 text-accent-grey-dark">
         <span>
           Designed and Developed by{" "}
           <a

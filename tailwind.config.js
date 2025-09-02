@@ -16,8 +16,8 @@ module.exports = {
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
-        jakarta: ["Plus Jakarta Sans", "sans-serif"],
         departure: ["DepartureMono", "monospace"],
+        jakarta: ["Plus Jakarta Sans", "sans-serif"],
       },
       fontSize: {
         "heading-lg": [

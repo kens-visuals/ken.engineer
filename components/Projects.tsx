@@ -20,7 +20,7 @@ export default function Projects() {
 
   return (
     <Section id="projects">
-      <h2 className="text-heading-lg text-primary-dark dark:text-primary-light">
+      <h2 className="text-5xl text-primary-light md:text-heading-lg">
         <motion.div
           initial="hidden"
           variants={container}
