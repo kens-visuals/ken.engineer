@@ -8,6 +8,28 @@ import TextScramble from "./TextScramble";
 import { container } from "../utils/animations";
 import { ProjectsDataTypes } from "../utils/projectsData";
 
+const cardVariants: Variants = {
+  initial: { opacity: 0, scale: 0.95 },
+  animate: {
+    scale: 1,
+    opacity: 1,
+    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+};
+
+const staggerVariants: Variants = {
+  initial: { opacity: 0, y: 20 },
+  animate: (i: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      delay: i * 0.1,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  }),
+};
+
 export default function ProjectCardV4({
   code,
   title,
@@ -17,31 +39,6 @@ export default function ProjectCardV4({
   description,
 }: ProjectsDataTypes) {
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
-
-  const cardVariants: Variants = {
-    initial: { opacity: 0, scale: 0.95 },
-    animate: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
-    },
-  };
-
-  const staggerVariants: Variants = {
-    initial: { opacity: 0, y: 20 },
-    animate: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
-    }),
-  };
 
   return (
     <motion.article

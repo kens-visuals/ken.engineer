@@ -13,3 +13,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-primary-dark: #1c1c1c;
+  --color-primary-light: #fff7f0;
+  --color-js-yellow: #ffd369;
+  --color-accent-grey-dark: #b5a99d;
+  --color-accent-grey-light: #5e607a;
+}

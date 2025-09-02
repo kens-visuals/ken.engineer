@@ -45,7 +45,7 @@ const container: Variants = {
 };
 
 export default function Header() {
-  const primary = { color: "var(--color-primary)" };
+  const primary = { color: "var(--color-js-yellow)" };
 
   return (
     <header className="my-72">

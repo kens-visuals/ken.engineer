@@ -1,6 +1,7 @@
 import { motion, Variants } from "framer-motion";
 
 import Section from "./Section";
+import GridSweepSegmentFM from "./GridSweepFM";
 import TextScramble from "./TextScramble";
 
 import { container } from "../utils/animations";
@@ -10,10 +11,7 @@ const cardVariants: Variants = {
   animate: {
     opacity: 1,
     scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
+    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
   },
 };
 
@@ -51,7 +49,7 @@ export default function Contact() {
             speed={14}
             text="Contact me"
             triggerInitiallyAndOnHover
-            style={{ color: "var(--color-primary)" }}
+            style={{ color: "var(--color-js-yellow)" }}
           />
         </div>
       </motion.h3>
@@ -61,13 +59,29 @@ export default function Contact() {
         whileInView="animate"
         variants={cardVariants}
         viewport={{ once: true, amount: 0.3 }}
-        className="group relative mt-8 overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-8 shadow-2xl backdrop-blur-xl transition-all duration-700 hover:scale-[1.02] hover:border-js-yellow/20"
+        className="group relative isolate mt-8 overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.08] to-white/[0.02] p-8 shadow-2xl backdrop-blur-xl transition-all duration-700 hover:scale-[1.02] hover:border-js-yellow/20"
       >
-        {/* Background gradients */}
-        <div className="absolute inset-0 bg-gradient-to-br from-js-yellow/10 via-transparent to-transparent transition-opacity duration-700 group-hover:opacity-100 lg:opacity-0" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px] transition-opacity duration-1000 group-hover:opacity-100 lg:opacity-0" />
+        {/* Background gradient wash (under everything) */}
+        <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-br from-js-yellow/10 via-transparent to-transparent transition-opacity duration-700 group-hover:opacity-100 lg:opacity-0" />
 
-        <div className="relative flex flex-col gap-6">
+        {/* Static grid (under) */}
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:20px_20px]" />
+
+        <GridSweepSegmentFM
+          cell={20}
+          skipEvery={1}
+          maxDelay={2.4}
+          minDelay={0.8}
+          minDuration={5.5}
+          maxDuration={7.0}
+          lineThickness={1}
+          baseOpacity={0.35}
+          segmentRatio={0.2}
+          color="253,211,105" // js-yellow
+          zIndexClass="z-[1]"
+        />
+
+        <div className="relative z-10 flex flex-col gap-6">
           <motion.div
             custom={1}
             variants={staggerVariants}
@@ -105,7 +119,6 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Content section */}
           <motion.div
             custom={2}
             variants={staggerVariants}
@@ -119,7 +132,6 @@ export default function Contact() {
             </p>
           </motion.div>
 
-          {/* Contact methods */}
           <motion.div
             custom={3}
             variants={staggerVariants}
@@ -132,6 +144,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.98 }}
                 className="relative inline-flex flex-1 items-center justify-center gap-3 rounded-2xl border border-transparent bg-js-yellow py-4 px-6 text-center text-body font-semibold tracking-wider text-primary-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-js-yellow/25"
               >
+                {/* email icon */}
                 <svg
                   id="envelope"
                   xmlns="http://www.w3.org/2000/svg"
@@ -151,13 +164,13 @@ export default function Contact() {
                 whileTap={{ scale: 0.98 }}
                 className="relative inline-flex flex-1 items-center justify-center gap-3 rounded-2xl border-2 border-js-yellow/30 bg-transparent py-4 px-6 text-center text-body font-semibold tracking-wider text-js-yellow transition-all duration-300 hover:border-js-yellow hover:bg-js-yellow hover:text-primary-dark hover:shadow-2xl hover:shadow-js-yellow/25"
               >
+                {/* linkedin icon */}
                 <svg
-                  id="linkedin"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   className="h-5 w-5 fill-current"
                 >
-                  <path d="m22,2v-1H2v1h-1v20h1v1h20v-1h1V2h-1Zm-9,10v8h-3v-11h3v1h1v-1h4v1h1v10h-3v-8h-3Zm-9-4v-3h3v3h-3Zm3,1v11h-3v-11h3Z" />
+                  <path d="M4 3h4v4H4zM4 9h4v12H4zM10 9h4v2h.1c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.4 3 5.4 6.9V21h-4v-5.2c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4V9z" />
                 </svg>
                 LinkedIn
               </motion.a>

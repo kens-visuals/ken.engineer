@@ -1,119 +1,3 @@
-// import { motion, Variants } from "framer-motion";
-// import { useEffect, useRef, useState } from "react";
-
-// const CHARS =
-//   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?";
-
-// const rand = () => CHARS[Math.floor(Math.random() * CHARS.length)];
-
-// interface TextScrambleProps {
-//   text: string;
-//   speed?: number;
-//   style?: React.CSSProperties;
-//   triggerOnHover?: boolean;
-//   triggerInitiallyAndOnHover?: boolean;
-// }
-
-// const child: Variants = {
-//   hidden: { opacity: 0, x: -6 },
-//   visible: {
-//     x: 0,
-//     opacity: 1,
-//     transition: { duration: 0.18, ease: "easeOut" },
-//   },
-// };
-
-// export default function TextScramble({
-//   text,
-//   style,
-//   speed = 18,
-//   triggerOnHover = false,
-//   triggerInitiallyAndOnHover = false,
-// }: TextScrambleProps) {
-//   const runningRef = useRef(false);
-//   const timerRef = useRef<number | null>(null);
-
-//   const [display, setDisplay] = useState(text);
-
-//   const cancel = () => {
-//     if (timerRef.current != null) {
-//       clearTimeout(timerRef.current);
-//       timerRef.current = null;
-//     }
-//     runningRef.current = false;
-//   };
-
-//   const scrambleOnce = () => {
-//     if (runningRef.current) return;
-//     runningRef.current = true;
-
-//     const n = text.length;
-//     const delay = 1000 / speed;
-//     let i = 0;
-
-//     const tick = () => {
-//       if (!runningRef.current) return; // canceled/unmounted
-//       if (i >= n) {
-//         setDisplay(text);
-//         runningRef.current = false;
-//         return;
-//       }
-//       const revealed =
-//         text.slice(0, i) +
-//         Array(n - i)
-//           .fill(0)
-//           .map(rand)
-//           .join("");
-
-//       setDisplay(revealed);
-//       i += 1;
-//       timerRef.current = window.setTimeout(tick, delay);
-//     };
-
-//     tick();
-//   };
-
-//   // Trigger initial pass after the entrance animation completes
-//   const onAnimationComplete = (def: string) => {
-//     if (def !== "visible") return;
-
-//     // Initial run if:
-//     // - not hover-only, OR
-//     // - explicitly requested initial + hover behavior
-//     if (!triggerOnHover || triggerInitiallyAndOnHover) {
-//       scrambleOnce();
-//     }
-//   };
-
-//   // Clean up timers on prop changes/unmount
-//   useEffect(() => {
-//     setDisplay(text); // keep the rendered text in sync
-//     return () => cancel();
-//   }, [text, speed]);
-
-//   // Attach hover/focus handlers if hover is requested
-//   const wantsHover = triggerOnHover || triggerInitiallyAndOnHover;
-
-//   const handlers = wantsHover
-//     ? {
-//         onMouseEnter: scrambleOnce,
-//         onFocus: scrambleOnce,
-//       }
-//     : {};
-
-//   return (
-//     <motion.span
-//       style={style}
-//       variants={child}
-//       className="inline-block text-inherit"
-//       onAnimationComplete={onAnimationComplete}
-//       {...handlers}
-//     >
-//       {display}
-//     </motion.span>
-//   );
-// }
-
 import { motion, Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -124,8 +8,8 @@ const rand = () => CHARS[Math.floor(Math.random() * CHARS.length)];
 interface TextScrambleProps {
   text: string;
   speed?: number; // chars/sec
-  style?: React.CSSProperties;
   triggerOnHover?: boolean;
+  style?: React.CSSProperties;
   triggerInitiallyAndOnHover?: boolean;
 }
 
@@ -151,11 +35,11 @@ export default function TextScramble({
   triggerOnHover = false,
   triggerInitiallyAndOnHover = false,
 }: TextScrambleProps) {
-  const [display, setDisplay] = useState(text);
-
-  const modeRef = useRef<Mode>(Mode.IDLE);
   const runningRef = useRef(false);
+  const modeRef = useRef<Mode>(Mode.IDLE);
   const timerRef = useRef<number | null>(null);
+
+  const [display, setDisplay] = useState(text);
 
   const clearTimer = () => {
     if (timerRef.current != null) {

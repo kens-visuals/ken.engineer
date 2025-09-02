@@ -1,17 +1,16 @@
 import { motion, Variants } from "framer-motion";
 
-export default function Section({
-  id,
-  children,
-}: {
+interface SectionProps {
   id: string;
   children: JSX.Element[];
-}) {
-  const sectionVariants: Variants = {
-    initial: { opacity: 0, x: "-10%" },
-    animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-  };
+}
 
+const sectionVariants: Variants = {
+  initial: { opacity: 0, x: "-10%" },
+  animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
+
+export default function Section({ id, children }: SectionProps) {
   return (
     <motion.section
       id={id}

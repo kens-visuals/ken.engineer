@@ -14,20 +14,20 @@ import {
 
 import profile from "../public/assets/profile-img.png";
 
+const titleVariants: Variants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: { delayChildren: 0.4, staggerChildren: 0.2 },
+  },
+};
+
+const buttonVariant: Variants = {
+  initial: { opacity: 0, x: 150 },
+  animate: { x: 0, opacity: 1, transition: { delay: 1.2 } },
+};
+
 export default function About() {
-  const titleVariants: Variants = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: { delayChildren: 0.4, staggerChildren: 0.2 },
-    },
-  };
-
-  const buttonVariant: Variants = {
-    initial: { opacity: 0, x: 150 },
-    animate: { x: 0, opacity: 1, transition: { delay: 1.2 } },
-  };
-
   return (
     <Section id="about">
       <h2 className="text-heading-lg md:text-8xl">
@@ -43,7 +43,7 @@ export default function About() {
             text="Ken"
             speed={14}
             triggerInitiallyAndOnHover
-            style={{ color: "var(--color-primary)" }}
+            style={{ color: "var(--color-js-yellow)" }}
           />
         </motion.div>
       </h2>
@@ -97,8 +97,8 @@ export default function About() {
               rel="noopener noreferrer"
               className="group relative inline-flex w-full items-center justify-center gap-3 rounded-xl border-2 bg-gradient-to-r from-js-yellow/10 to-js-yellow/5 p-4 text-center text-xl font-bold uppercase tracking-widest text-js-yellow transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-js-yellow/25 md:basis-1/2"
               style={{
-                borderColor: "var(--color-primary)",
-                color: "var(--color-primary)",
+                color: "var(--color-js-yellow)",
+                borderColor: "var(--color-js-yellow)",
               }}
             >
               <svg
@@ -106,7 +106,7 @@ export default function About() {
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
-                style={{ fill: "var(--color-primary)" }}
+                style={{ fill: "var(--color-js-yellow)" }}
               >
                 <polygon points="1 15 1 13 12 13 12 8 13 8 13 9 14 9 14 10 15 10 15 11 16 11 16 12 17 12 17 13 18 13 18 15 17 15 17 16 16 16 16 17 15 17 15 18 14 18 14 19 13 19 13 20 12 20 12 15 1 15" />
                 <polygon points="23 6 23 22 22 22 22 23 7 23 7 22 6 22 6 16 8 16 8 21 21 21 21 8 16 8 16 3 8 3 8 12 6 12 6 2 7 2 7 1 18 1 18 2 19 2 19 3 20 3 20 4 21 4 21 5 22 5 22 6 23 6" />
@@ -125,9 +125,8 @@ export default function About() {
               rel="noopener noreferrer"
               className="group relative inline-flex w-full items-center justify-center gap-3 rounded-xl border border-transparent p-4 text-center text-2xl font-bold uppercase tracking-widest text-primary-dark transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-js-yellow/25 md:basis-1/2"
               style={{
-                color: "var(--color-background)",
-                borderColor: "var(--color-primary)",
-                backgroundColor: "var(--color-primary)",
+                color: "var(--color-primary-dark)",
+                backgroundColor: "var(--color-js-yellow)",
               }}
             >
               <svg

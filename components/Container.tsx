@@ -1,4 +1,3 @@
-// Components
 import Nav from "./Nav";
 import Footer from "./Footer";
 

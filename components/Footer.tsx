@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-// Assets
 import certificate from "../public/assets/meta-front-end-developer-certificate.png";
 
 export default function Footer() {
@@ -41,7 +40,11 @@ export default function Footer() {
 
   const menuItemsDisplay = menuItems.map(({ name, path }) => (
     <li key={name}>
-      <Link href={path} scroll={false}>
+      <Link
+        href={path}
+        scroll={false}
+        className="text-primary-light transition-all duration-300 hover:text-js-yellow"
+      >
         {name}
       </Link>
     </li>
@@ -49,7 +52,12 @@ export default function Footer() {
 
   const socialsDisplay = socials.map(({ name, link }) => (
     <li key={name}>
-      <a href={link} target="_blank" rel="noopener noreferrer">
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-primary-light transition-all duration-300 hover:text-js-yellow"
+      >
         {name}
       </a>
     </li>
@@ -65,14 +73,14 @@ export default function Footer() {
         <a
           target="_blank"
           rel="noopener noreferrer"
+          className="w-full grayscale filter transition-all duration-300 hover:grayscale-0"
           href="https://www.credly.com/badges/46c47d7c-d818-4d7f-b808-5d04ad3053b9/public_url"
-          className="w-full grayscale filter hover:grayscale-0"
         >
           <Image
+            width={100}
+            height={100}
             src={certificate}
             alt="meta front end developer certificate"
-            height={100}
-            width={100}
           />
         </a>
       </div>

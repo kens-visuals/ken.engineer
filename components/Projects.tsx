@@ -42,8 +42,8 @@ export default function Projects() {
             text="projects"
             triggerInitiallyAndOnHover
             style={{
-              color: "var(--color-primary)",
               textDecoration: "underline",
+              color: "var(--color-js-yellow)",
             }}
           />
 
