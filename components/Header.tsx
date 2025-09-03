@@ -140,7 +140,7 @@ export default function Header() {
     const length = available.length || 1;
 
     // Get a random index different from current
-    let newIdx;
+    let newIdx: number;
     do {
       newIdx = Math.floor(Math.random() * length);
     } while (newIdx === index && length > 1);
