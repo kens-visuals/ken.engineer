@@ -10,7 +10,7 @@ import { siteConfig } from "../utils/config";
 
 export default function Home() {
   return (
-    <div className="bg-primary relative min-h-screen overflow-x-hidden bg-primary-dark font-departure">
+    <div className="bg-primary relative min-h-screen bg-primary-dark font-departure">
       <Head>
         <title>{siteConfig.title}</title>
       </Head>

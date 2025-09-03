@@ -60,6 +60,7 @@ export const socials = [
 
 // Menu items for navigation
 export const menuItems = [
+  { name: "About", path: "/#about" },
   { name: "Skills", path: "/#skills" },
   { name: "Projects", path: "/#projects" },
   { name: "Contact", path: "/#contact" },

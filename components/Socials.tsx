@@ -72,7 +72,7 @@ export default function Socials() {
       whileInView="animate"
       variants={listVariants}
       viewport={{ once: true, amount: "all" }}
-      className="my-4 flex w-full items-center justify-around md:basis-1/2 lg:gap-4"
+      className="my-4 flex w-full items-center justify-around md:basis-1/2 lg:mb-0 lg:gap-4"
     >
       {socialIconsDisplay}
     </motion.ul>

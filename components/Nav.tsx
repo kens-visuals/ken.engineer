@@ -3,8 +3,10 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import { motion, Variants, AnimatePresence } from "framer-motion";
 
-import { menuItems, siteConfig } from "../utils/config";
+import { useSmoothScroll } from "../hooks/useSmoothScroll";
+
 import { navIcons } from "../utils/icons";
+import { menuItems, siteConfig } from "../utils/config";
 
 type MenuItem = {
   name: string;
@@ -12,15 +14,14 @@ type MenuItem = {
   icon?: ReactNode;
 };
 
-// Add external link icon to resume menu item
 const menuItemsWithIcons: MenuItem[] = menuItems.map((item) => ({
   ...item,
   icon:
     item.name === "Resume" ? (
       <navIcons.externalLink
-        className="h-4 w-4 fill-primary-light"
         size={16}
         ariaHidden
+        className="h-4 w-4 fill-primary-light transition-all duration-200 group-hover/menu-item:fill-js-yellow"
       />
     ) : undefined,
 }));
@@ -46,21 +47,105 @@ const mobileNavItemsVariants: Variants = {
 };
 
 export default function Nav() {
+  const { scrollToSection } = useSmoothScroll();
+
   const [mounted, setMounted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
+  const handleNavOrBrandClick = (
+    pathOrEvent: string | React.MouseEvent,
+    isBrand: boolean = false,
+  ) => {
+    if (typeof pathOrEvent === "string") {
+      const path = pathOrEvent;
+      setIsMenuOpen(false);
+
+      if (path.startsWith("/resume.pdf")) return;
+
+      if (path.startsWith("/#")) {
+        const targetId = path.substring(2);
+        const navItem = document.querySelector(`[href="${path}"]`);
+        const originalText = navItem?.textContent;
+
+        // Scramble text during scroll
+        const scrambleText = () => {
+          const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+          return originalText
+            ?.split("")
+            .map(() => chars[Math.floor(Math.random() * chars.length)])
+            .join("");
+        };
+
+        scrollToSection(targetId, {
+          offset: 100,
+          onStart: () => {
+            // Start text scramble
+            const interval = setInterval(() => {
+              if (navItem) navItem.textContent = scrambleText() || "";
+            }, 50);
+
+            setTimeout(() => {
+              clearInterval(interval);
+              if (navItem) navItem.textContent = originalText || "";
+            }, 1000);
+          },
+        });
+      }
+    } else if (isBrand) {
+      // Handle brand click
+      const e = pathOrEvent;
+      e.preventDefault();
+      const navItem = document.querySelector(`[href="/"]`);
+      const originalText = navItem?.textContent;
+
+      // Scramble text during scroll
+      const scrambleText = () => {
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        return originalText
+          ?.split("")
+          .map(() => chars[Math.floor(Math.random() * chars.length)])
+          .join("");
+      };
+
+      scrollToSection("header", {
+        offset: 0,
+        onStart: () => {
+          // Start text scramble
+          const interval = setInterval(() => {
+            if (navItem) navItem.textContent = scrambleText() || "";
+          }, 50);
+
+          setTimeout(() => {
+            clearInterval(interval);
+            if (navItem) navItem.textContent = originalText || "";
+          }, 1000);
+        },
+      });
+    }
+  };
+
   const menuItemsDisplay = menuItemsWithIcons.map(({ name, path, icon }) => (
     <motion.li
       key={name}
+      whileTap={{ scale: 0.95 }}
       variants={mobileNavItemsVariants}
-      onClick={() => setIsMenuOpen(false)}
       className="group/menu-item transition-all duration-200 hover:text-js-yellow"
     >
-      <Link href={path} scroll={false} className="flex items-center gap-2">
+      <Link
+        href={path}
+        scroll={false}
+        className="flex items-center gap-2"
+        onClick={(e) => {
+          if (path.startsWith("/#")) {
+            e.preventDefault();
+            handleNavOrBrandClick(path, e);
+          }
+        }}
+      >
         {name}
-        <span className="group-hover/menu-item:text-js-yellow">{icon}</span>
+        {icon}
       </Link>
     </motion.li>
   ));
@@ -76,6 +161,7 @@ export default function Nav() {
         <div className="relative mx-auto flex w-[92%] max-w-5xl justify-between gap-2 font-inter text-primary-light md:static md:items-center md:gap-4">
           <Link
             href="/"
+            onClick={(e) => handleNavOrBrandClick(e, true)}
             className="font-departure text-sm uppercase sm:text-body"
           >
             {siteConfig.navigation.brand}
@@ -88,9 +174,9 @@ export default function Nav() {
             onClick={() => setIsMenuOpen((s) => !s)}
           >
             <navIcons.hamburger
-              className="h-6 w-6 fill-primary-light"
               size={24}
               ariaHidden
+              className="h-6 w-6 fill-primary-light"
             />
           </button>
 

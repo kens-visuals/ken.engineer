@@ -4,9 +4,9 @@ import Section from "./Section";
 import TextScramble from "./TextScramble";
 import GridSweepSegmentFM from "./GridSweepFM";
 
-import { container } from "../utils/animations";
-import { contactInfo } from "../utils/config";
 import { actionIcons } from "../utils/icons";
+import { contactInfo } from "../utils/config";
+import { container } from "../utils/animations";
 
 const cardVariants: Variants = {
   initial: { opacity: 0, scale: 0.95 },

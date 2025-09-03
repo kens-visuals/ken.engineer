@@ -37,7 +37,7 @@ export default function About() {
           initial="hidden"
           variants={container}
           whileInView="visible"
-          viewport={{ once: true, amount: "all" }}
+          viewport={{ once: true, amount: "some" }}
           className="lg:inline-flex lg:whitespace-nowrap"
         >
           <TextScramble
@@ -114,32 +114,32 @@ export default function About() {
               }}
             >
               <actionIcons.file
-                className="h-6 w-6 fill-js-yellow"
                 size={24}
                 ariaHidden
+                className="h-6 w-6 fill-js-yellow"
               />
               View Resume
             </motion.a>
 
             <motion.a
+              target="_blank"
               initial="initial"
-              whileHover={hireMeButtonHover}
               whileInView="animate"
               variants={buttonVariant}
-              viewport={{ once: true, amount: "some" }}
-              href={`mailto:${siteConfig.email}`}
-              target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex w-full items-center justify-center gap-3 rounded-xl border border-transparent p-4 text-center text-2xl font-bold uppercase tracking-widest text-primary-dark transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-js-yellow/25 md:basis-1/2"
+              whileHover={hireMeButtonHover}
+              href={`mailto:${siteConfig.email}`}
+              viewport={{ once: true, amount: "some" }}
               style={{
                 color: "var(--color-primary-dark)",
                 backgroundColor: "var(--color-js-yellow)",
               }}
+              className="group relative inline-flex w-full items-center justify-center gap-3 rounded-xl border border-transparent p-4 text-center text-2xl font-bold uppercase tracking-widest text-primary-dark transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-js-yellow/25 md:basis-1/2"
             >
               <actionIcons.writing
-                className="h-6 w-6 fill-primary-dark"
                 size={24}
                 ariaHidden
+                className="h-6 w-6 fill-primary-dark"
               />
               Hire Me!
             </motion.a>

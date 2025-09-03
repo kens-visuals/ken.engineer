@@ -46,7 +46,7 @@ export default function Skills() {
           <SkillsLogosList logosArr={icons.mainToolsLogos} />
           <SkillsBackdrop>
             <SkillsTitle
-              title="Main Tools"
+              title="Core Stack"
               bgPattern="bg-resume-pattern--text"
             />
           </SkillsBackdrop>
@@ -56,7 +56,7 @@ export default function Skills() {
           <SkillsLogosList logosArr={icons.otherToolsLogos} />
           <SkillsBackdrop>
             <SkillsTitle
-              title="Other Tools"
+              title="Extra Powers"
               bgPattern="bg-main-tools-pattern--text"
             />
           </SkillsBackdrop>
