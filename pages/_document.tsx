@@ -69,6 +69,11 @@ export default function Document() {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
+        {/* PWA / Add to Home Screen: status bar and browser chrome match body background */}
+        <meta name="theme-color" content="#1C1C1C" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content={siteConfig.title} />
         <meta name="robots" content="index, follow" />
         <meta name="author" content={siteConfig.name} />
         <meta
