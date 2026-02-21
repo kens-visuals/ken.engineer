@@ -24,9 +24,7 @@ export default function Home() {
           <Skills />
 
           <Projects />
-
           {/* <Articles posts={posts} /> */}
-
           <Contact />
         </main>
       </Container>

@@ -32,13 +32,13 @@ export const siteConfig = {
 
   // Resume
   resume: {
-    path: "/resume.pdf",
+    path: "https://drive.google.com/file/d/1Qjn35_m3PF6VcTgVze_T2qk5xMNxoRkV/view",
     name: "Resume",
   },
 
   // Footer
   footer: {
-    copyright: "Designed and Developed by Ken Nersisyan",
+    copyright: "Designed and Developed by ",
   },
 };
 
@@ -64,7 +64,7 @@ export const menuItems = [
   { name: "Skills", path: "/#skills" },
   { name: "Projects", path: "/#projects" },
   { name: "Contact", path: "/#contact" },
-  { name: "Resume", path: "/resume.pdf" },
+  { name: "Resume", path: "https://drive.google.com/file/d/1Qjn35_m3PF6VcTgVze_T2qk5xMNxoRkV/view" },
 ];
 
 // Contact information

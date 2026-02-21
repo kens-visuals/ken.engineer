@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 import Section from "./Section";
 import ProjectCard from "./ProjectCard";
+import DisciplinesCard from "./DisciplinesCard";
 import TextScramble from "./TextScramble";
 
 import { projectsData } from "../utils/projectsData";
@@ -30,7 +31,7 @@ export default function Projects() {
           viewport={{ once: true, amount: "some" }}
           className="lg:inline-flex lg:whitespace-nowrap"
         >
-          <TextScramble speed={14} text="40+" />{" "}
+          <TextScramble speed={14} text="50+" />{" "}
         </motion.div>{" "}
         <motion.div
           initial="hidden"
@@ -61,7 +62,10 @@ export default function Projects() {
         </motion.div>
       </h2>
 
-      <div className="mt-10 grid gap-6">{projectCardsDisplay}</div>
+      <div className="mt-10 grid gap-6">
+        <DisciplinesCard />
+        {projectCardsDisplay}
+      </div>
 
       <motion.a
         whileHover={buttonCustomHover}
