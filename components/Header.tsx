@@ -214,7 +214,7 @@ export default function Header() {
         aria-label="Change heading"
         whileTap={{ scale: 0.95, rotate: -1 }}
         whileHover={{ scale: 1.05, rotate: 2 }}
-        className="group absolute bottom-32 right-4 z-50 flex items-center gap-2 rounded-2xl border-2 border-js-yellow/30 bg-gradient-to-r from-js-yellow/10 to-primary-light/10 px-3 py-2 font-mono text-sm font-bold uppercase text-js-yellow backdrop-blur-sm transition-all duration-500 hover:border-js-yellow/60 hover:from-js-yellow/20 hover:to-primary-light/20 hover:shadow-[0_0_20px_rgba(247,223,30,0.3)] md:bottom-28 md:right-0 md:text-lg"
+        className="group absolute bottom-32 right-4 z-10 flex items-center gap-2 rounded-2xl border-2 border-js-yellow/30 bg-gradient-to-r from-js-yellow/10 to-primary-light/10 px-3 py-2 font-mono text-sm font-bold uppercase text-js-yellow backdrop-blur-sm transition-all duration-500 hover:border-js-yellow/60 hover:from-js-yellow/20 hover:to-primary-light/20 hover:shadow-[0_0_20px_rgba(247,223,30,0.3)] md:bottom-28 md:right-0 md:text-lg"
       >
         <div className="relative">
           <svg

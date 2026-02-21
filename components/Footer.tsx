@@ -52,29 +52,33 @@ export default function Footer() {
     </li>
   ));
 
+  const certificateLink = (
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      className="grayscale transition-all duration-300 hover:grayscale-0"
+      href={siteConfig.externalLinks.credly}
+    >
+      <Image
+        width={100}
+        height={100}
+        src={certificate}
+        alt="meta front end developer certificate"
+      />
+    </a>
+  );
+
   return (
     <footer className="border-t border-t-primary-dark pt-6">
-      <div className="my-8 grid gap-16 md:grid-cols-3 lg:max-w-3xl lg:gap-4">
+      <div className="my-8 grid grid-cols-2 gap-8 md:grid-cols-3">
         <ul className="space-y-2">{menuItemsDisplay}</ul>
-
         <ul className="space-y-2">{socialsDisplay}</ul>
-
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full grayscale filter transition-all duration-300 hover:grayscale-0"
-          href={siteConfig.externalLinks.credly}
-        >
-          <Image
-            width={100}
-            height={100}
-            src={certificate}
-            alt="meta front end developer certificate"
-          />
-        </a>
+        <div className="col-span-2 flex justify-start pt-8 md:col-span-1 md:justify-end md:pt-0">
+          {certificateLink}
+        </div>
       </div>
 
-      <div className="flex items-center justify-center pt-24 text-accent-grey-dark">
+      <div className="flex items-center justify-center pt-12 text-accent-grey-dark sm:pt-16">
         <span>
           {siteConfig.footer.copyright}{" "}
           <a
