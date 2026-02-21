@@ -19,6 +19,7 @@
     ]
   },
   "dependencies": {
+    "developer-icons": "^6.0.5",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "framer-motion": "^7.6.2",
     "nanoid": "^4.0.0",

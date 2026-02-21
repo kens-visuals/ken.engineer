@@ -125,6 +125,18 @@ module.exports = {
         "tablet-row-layout": "repeat(3, minmax(10rem, auto))",
         "desk-row-layout": "repeat(2, minmax(10rem, auto))",
       },
+      keyframes: {
+        fadeIn: {
+          to: { opacity: "1" },
+        },
+        fadeUp: {
+          from: { opacity: "0", transform: "translateY(24px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "orbital-fade-in": "fadeIn 1.2s ease 0.6s forwards",
+      },
     },
   },
   plugins: [],

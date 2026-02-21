@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
 import ImageModal from "./ImageModal";
@@ -8,6 +7,7 @@ import TextScramble from "./TextScramble";
 import { container } from "../utils/animations";
 import { ProjectsDataTypes } from "../utils/projectsData";
 import { actionIcons } from "../utils/icons";
+import { projectTechIconMap } from "../utils/skills";
 
 const cardVariants: Variants = {
   initial: { opacity: 0, scale: 0.95 },
@@ -103,25 +103,27 @@ export default function ProjectCardV4({
                   Technology Stack
                 </h4>
                 <div className="flex flex-wrap gap-1">
-                  {techStack.map(({ id, img }, index) => (
-                    <motion.div
-                      key={id}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.4 + index * 0.05 }}
-                      className="group/tech"
-                    >
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary-dark/20 bg-primary-dark/90 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-js-yellow/30 hover:shadow-xl hover:shadow-js-yellow/20">
-                        <Image
-                          src={img}
-                          alt="tech logo"
-                          width={24}
-                          height={24}
-                          className="object-contain transition-transform duration-300 group-hover/tech:scale-110"
-                        />
-                      </div>
-                    </motion.div>
-                  ))}
+                  {techStack.map(({ id, name, iconKey }, index) => {
+                    const TechIcon = projectTechIconMap[iconKey];
+                    if (!TechIcon) return null;
+                    return (
+                      <motion.div
+                        key={id}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.4 + index * 0.05 }}
+                        className="group/tech"
+                        title={name}
+                      >
+                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary-dark/20 bg-primary-dark/90 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-js-yellow/30 hover:shadow-xl hover:shadow-js-yellow/20">
+                          <TechIcon
+                            size={24}
+                            className="h-6 w-6 object-contain transition-transform duration-300 group-hover/tech:scale-110 [&>svg]:h-6 [&>svg]:w-6"
+                          />
+                        </div>
+                      </motion.div>
+                    );
+                  })}
                 </div>
               </motion.div>
             </div>

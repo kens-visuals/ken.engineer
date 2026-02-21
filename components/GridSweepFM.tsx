@@ -1,4 +1,4 @@
-import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { nanoid } from "nanoid";
 
@@ -41,8 +41,8 @@ export default function GridSweepSegmentFM({
   const hostRef = useRef<HTMLDivElement | null>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
 
-  // Measure THIS element so width/height never come back as 0
-  useLayoutEffect(() => {
+  // Measure THIS element so width/height never come back as 0 (useEffect for SSR-safe hydration)
+  useEffect(() => {
     const el = hostRef.current;
     if (!el) return;
     const ro = new ResizeObserver(([entry]) => {
