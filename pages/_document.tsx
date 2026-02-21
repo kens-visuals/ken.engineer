@@ -4,7 +4,7 @@ import { siteConfig, socialLinks } from "../utils/config";
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="en" className="bg-[#1C1C1C]">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -72,7 +72,7 @@ export default function Document() {
         {/* PWA / Add to Home Screen: status bar and browser chrome match body background */}
         <meta name="theme-color" content="#1C1C1C" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="apple-mobile-web-app-title" content={siteConfig.title} />
         <meta name="robots" content="index, follow" />
         <meta name="author" content={siteConfig.name} />
@@ -81,7 +81,7 @@ export default function Document() {
           content="front-end developer, React, Next.js, TypeScript, portfolio"
         />
       </Head>
-      <body>
+      <body className="bg-[#1C1C1C]" style={{ backgroundColor: "#1C1C1C" }}>
         <Main />
         <NextScript />
         <script

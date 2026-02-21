@@ -76,7 +76,7 @@ export default function DisciplinesCard() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex items-center gap-2 rounded-full border border-js-yellow/30 bg-js-yellow/20 px-3 py-1.5"
+            className="flex w-fit items-center gap-2 self-start rounded-full border border-js-yellow/30 bg-js-yellow/20 px-3 py-1.5"
           >
             <span className="h-2 w-2 animate-pulse rounded-full bg-js-yellow" />
             <span className="text-sm font-medium text-js-yellow">iOS App</span>
