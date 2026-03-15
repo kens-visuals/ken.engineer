@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import certificate from "../public/assets/meta-front-end-developer-certificate.png";
 import { socials, menuItems, siteConfig, socialLinks } from "../utils/config";
 import { navIcons } from "../utils/icons";
 
@@ -52,29 +51,39 @@ export default function Footer() {
     </li>
   ));
 
-  const certificateLink = (
-    <a
-      target="_blank"
-      rel="noopener noreferrer"
-      className="grayscale transition-all duration-300 hover:grayscale-0"
-      href={siteConfig.externalLinks.credly}
-    >
-      <Image
-        width={100}
-        height={100}
-        src={certificate}
-        alt="meta front end developer certificate"
-      />
-    </a>
-  );
+  // Images only in UI; title/issuer/issued used for SEO (alt, title)
+  const certificatesDisplay = siteConfig.certificates.map((cert) => {
+    const altText = [cert.title, cert.issuer, cert.issued].filter(Boolean).join(", ");
+    const titleAttr = `${cert.title} — ${cert.issuer}${cert.issued ? ` (${cert.issued})` : ""}`;
+    return (
+      <a
+        key={cert.id}
+        target="_blank"
+        rel="noopener noreferrer"
+        href={cert.url}
+        title={titleAttr}
+        className="flex shrink-0 grayscale transition-all duration-300 hover:grayscale-0"
+      >
+        <span className="relative block h-[100px] w-[100px] overflow-hidden rounded-lg bg-white/5">
+          <Image
+            fill
+            src={cert.image}
+            alt={altText}
+            className="object-contain"
+            sizes="100px"
+          />
+        </span>
+      </a>
+    );
+  });
 
   return (
     <footer className="border-t border-t-primary-dark pt-6">
       <div className="my-8 grid grid-cols-2 gap-8 md:grid-cols-3">
         <ul className="space-y-2">{menuItemsDisplay}</ul>
         <ul className="space-y-2">{socialsDisplay}</ul>
-        <div className="col-span-2 flex justify-start pt-8 md:col-span-1 md:justify-end md:pt-0">
-          {certificateLink}
+        <div className="col-span-2 flex flex-row flex-wrap justify-start gap-4 pt-8 md:col-span-1 md:flex-nowrap md:justify-end md:pt-0">
+          {certificatesDisplay}
         </div>
       </div>
 

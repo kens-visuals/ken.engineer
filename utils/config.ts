@@ -20,6 +20,33 @@ export const siteConfig = {
     frontendMentor: "https://github.com/kens-visuals/frontend-mentor",
   },
 
+  // Certificates (footer: images only in UI; title/issuer/issued for SEO alt/title)
+  certificates: [
+    {
+      id: "meta",
+      title: "Meta Front-End Developer",
+      issuer: "Meta",
+      url: "https://www.credly.com/badges/46c47d7c-d818-4d7f-b808-5d04ad3053b9/public_url",
+      image: "/assets/meta-front-end-developer-certificate.png",
+    },
+    {
+      id: "claude-101",
+      title: "Claude 101",
+      issuer: "Anthropic",
+      issued: "Mar 2026",
+      url: "/certificates/81eb8ce7-1.png",
+      image: "/certificates/81eb8ce7-1.png",
+    },
+    {
+      id: "claude-code",
+      title: "Claude Code in Action",
+      issuer: "Anthropic",
+      issued: "Mar 2026",
+      url: "/certificates/cfde8c90-1.png",
+      image: "/certificates/cfde8c90-1.png",
+    },
+  ],
+
   // Navigation
   navigation: {
     brand: "Ken.Engineer",
