@@ -7,7 +7,7 @@ const SUPPORT_EMAIL = "ken@nersisyan.dev";
 
 export default function DisciplinesSupport() {
   return (
-    <div className="bg-primary relative min-h-screen bg-primary-dark font-departure">
+    <div className="relative min-h-screen w-full bg-primary-dark font-departure text-primary-light">
       <Head>
         <title>Disciplines — Support | {siteConfig.name}</title>
         <meta name="description" content="Support for the Disciplines iOS app." />

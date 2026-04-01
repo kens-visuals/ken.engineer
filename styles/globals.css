@@ -21,3 +21,12 @@
   --color-accent-grey-dark: #b5a99d;
   --color-accent-grey-light: #5e607a;
 }
+
+html {
+  background-color: var(--color-primary-dark);
+}
+
+body {
+  background-color: var(--color-primary-dark);
+  color: var(--color-primary-light);
+}

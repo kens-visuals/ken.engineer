@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { motion, Variants, AnimatePresence } from "framer-motion";
 
 import { useSmoothScroll } from "../hooks/useSmoothScroll";
@@ -13,6 +14,11 @@ type MenuItem = {
   path: string;
   icon?: ReactNode;
 };
+
+const DISCIPLINES_NAV_ITEMS: MenuItem[] = [
+  { name: "Terms", path: "/disciplines/terms" },
+  { name: "Privacy", path: "/disciplines/privacy" },
+];
 
 const menuItemsWithIcons: MenuItem[] = menuItems.map((item) => ({
   ...item,
@@ -47,10 +53,16 @@ const mobileNavItemsVariants: Variants = {
 };
 
 export default function Nav() {
+  const router = useRouter();
   const { scrollToSection } = useSmoothScroll();
 
   const [mounted, setMounted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const isDisciplinesNav = router.pathname.startsWith("/disciplines");
+  const navItemsSource: MenuItem[] = isDisciplinesNav
+    ? DISCIPLINES_NAV_ITEMS
+    : menuItemsWithIcons;
 
   useEffect(() => setMounted(true), []);
 
@@ -126,7 +138,7 @@ export default function Nav() {
     }
   };
 
-  const menuItemsDisplay = menuItemsWithIcons.map(({ name, path, icon }) => (
+  const menuItemsDisplay = navItemsSource.map(({ name, path, icon }) => (
     <motion.li
       key={name}
       whileTap={{ scale: 0.95 }}
@@ -138,6 +150,10 @@ export default function Nav() {
         scroll={false}
         className="flex items-center gap-2"
         onClick={(e) => {
+          if (isDisciplinesNav) {
+            setIsMenuOpen(false);
+            return;
+          }
           if (path.startsWith("/#")) {
             e.preventDefault();
             handleNavOrBrandClick(path, e);
@@ -159,13 +175,22 @@ export default function Nav() {
         className="fixed top-0 left-1/2 z-50 flex w-full -translate-x-1/2 items-center justify-between rounded-b-lg bg-primary-dark/70 pb-4 pt-6 backdrop-blur-lg"
       >
         <div className="relative mx-auto flex w-[92%] max-w-5xl justify-between gap-2 font-inter text-primary-light md:static md:items-center md:gap-4">
-          <Link
-            href="/"
-            onClick={(e) => handleNavOrBrandClick(e, true)}
-            className="font-departure text-sm uppercase sm:text-body"
-          >
-            {siteConfig.navigation.brand}
-          </Link>
+          {isDisciplinesNav ? (
+            <Link
+              href="/disciplines"
+              className="font-departure text-sm uppercase sm:text-body"
+            >
+              Disciplines
+            </Link>
+          ) : (
+            <Link
+              href="/"
+              onClick={(e) => handleNavOrBrandClick(e, true)}
+              className="font-departure text-sm uppercase sm:text-body"
+            >
+              {siteConfig.navigation.brand}
+            </Link>
+          )}
 
           <button
             type="button"
